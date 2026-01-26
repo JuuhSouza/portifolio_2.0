@@ -6,3 +6,13 @@
 
   <router-view />
 </template>
+
+<script>
+export default {}
+</script>
+
+<style>
+nav {
+  margin-bottom: 20px;
+}
+</style>

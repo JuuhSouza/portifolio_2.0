@@ -1,6 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-
-// páginas
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 
@@ -10,7 +8,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(), // 👈 funciona no GitHub Pages
+  history: createWebHashHistory(), // HASH MODE funciona no GitHub Pages
   routes
 })
 

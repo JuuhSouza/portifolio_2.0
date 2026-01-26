@@ -1,3 +1,4 @@
 <template>
-    <h1> ola vue </h1>
+  <h1>Home</h1>
+  <p>Bem-vindo ao meu portfólio!</p>
 </template>
