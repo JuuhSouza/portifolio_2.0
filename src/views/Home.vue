@@ -1,4 +1,18 @@
 <template>
-  <h1>Home</h1>
-  <p>Bem-vindo ao meu portfólio!</p>
+  <Banner/>
 </template>
+
+<script>
+import Banner from '../components/Banner.vue';
+
+  export default {
+    name: "Home",
+    components:{
+      Banner
+    }
+  }
+</script>
+
+<style scoped>
+
+</style>
