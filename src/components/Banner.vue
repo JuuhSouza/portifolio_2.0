@@ -8,25 +8,26 @@
         <img src="../assets/img/mountain_10.png" alt="" data-speedx="0.195" data-speedy="0.305" data-speedz="0" class="parallax mountain-10">
         <img src="../assets/img/fog_6.png" alt="" data-speedx="0.25" data-speedy="0.28" data-speedz="0" class="parallax fog-6">
         <img src="../assets/img/mountain_9.png" alt="" data-speedx="0.125" data-speedy="0.155" data-speedz="0.15" class="parallax mountain-9">
-        <img src="../assets/img/mountain_8.png" alt="" data-speedx="0.15" data-speedy="0.11" data-speedz="0" class="parallax mountain-8">
+        <img src="../assets/img/mountain_8.png" alt="" data-speedx="0.1" data-speedy="0.11" data-speedz="0" class="parallax mountain-8">
         <img src="../assets/img/fog_5.png" alt="" data-speedx="0.16" data-speedy="0.105" data-speedz="0" class="parallax fog-5">
         <img src="../assets/img/mountain_7.png" alt="" data-speedx="0.1" data-speedy="0.07" data-speedz="0" class="parallax mountain-7">
         <div class="text parallax" data-speedx="0.07">
-            <h2> Subtitulo </h2>
-            <h1>Titulo</h1>
+            <h2> Emily Dickinson</h2>
+            <h1>"A natureza é o que sabemos sem ter a arte de exprimi-lo"</h1> 
         </div>
         <img src="../assets/img/mountain_6.png" alt="" data-speedx="0.065" data-speedy="0.05" data-speedz="0.05" class="parallax mountain-6">
         <img src="../assets/img/fog_4.png" alt="" data-speedx="0.135" data-speedy="0.2" data-speedz="0" class="parallax fog-4">
-        <img src="../assets/img/mountain_5.png" alt="" data-speedx="0.3" data-speedy="0.08" data-speedz="0.13" class="parallax mountain-5">
+        <img src="../assets/img/mountain_5.png" alt="" data-speedx="0.8" data-speedy="0.08" data-speedz="0.13" class="parallax mountain-5">
         <img src="../assets/img/fog_3.png" alt="" data-speedx="0.11" data-speedy="0.018" data-speedz="0" class="parallax fog-3">
         <img src="../assets/img/mountain_4.png" alt="" data-speedx="0.059" data-speedy="0.024" data-speedz="0" class="parallax mountain-4">
         <img src="../assets/img/mountain_3.png" alt="" data-speedx="0.04" data-speedy="0.018" data-speedz="0.32" class="parallax mountain-3">
         <img src="../assets/img/fog_2.png" alt="" data-speedx="0.15" data-speedy="0.0115" data-speedz="0" class="parallax fog-2">
-        <img src="../assets/img/mountain_2.png" alt="" data-speedx="0.4" data-speedy="0.013" data-speedz="0" class="parallax mountain-2">
-        <img src="../assets/img/mountain-1.png" alt="" data-speedx="0.0235" data-speedy="0.018" data-speedz="0.53" class="parallax mountain-1">
+        <img src="../assets/img/mountain_2.png" alt="" data-speedx="0.0235" data-speedy="0.013" data-speedz="0" class="parallax mountain-2">
+        <img src="../assets/img/mountain-1.png" alt="" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" class="parallax mountain-1">
         <img src="../assets/img/sun_rays.png" alt="" class="sun-rays">
         <img src="../assets/img/black_shadow.png" alt="" class="black-shadow">
         <img src="../assets/img/fog_1.png" alt="" data-speedx="0.12" data-speedy="0.01" data-speedz="0" class="parallax fog-1">
+        
     </main>
 </template>
 
@@ -60,7 +61,6 @@ export default {
         
         const zValue = e.clientX - parseFloat(getComputedStyle(el).left) * isInLeft * 0.1;
 
-
        el.style.transform = `perspective(2300px) translateX(calc(-50% + ${-this.xValue * speedx}px)) rotateY(${this.rotateDegree}deg) translateY(calc(-50% + ${this.yValue * speedy}px)) translateZ(${zValue * speedz}px)`;
       });
     });
@@ -78,7 +78,7 @@ main{
 
 .parallax{
     pointer-events: none;
-    transition: 0.45s cubic-bezier(0.2, 0.49, 0.38, 0.99);
+    transition: 0.60s cubic-bezier(0.2, 0.49, 0.38, 0.99);
 }
 
 .bg-img{
@@ -86,11 +86,12 @@ main{
     width: 2800px;
     top: calc(50% - 390px);
     left: calc(50% + 10px);
+    z-index: 1;
 }
 
 .fog-1{
     position: absolute;
-    z-index: 21;
+    z-index: 2;
     width: 1600px;
     top: calc(100% - 355px);
     left: 50%;
@@ -122,18 +123,18 @@ main{
 
 .fog-5{
     position: absolute;
-    z-index: 13;
-    width: 1435px;
-    top: calc(50% + 149px);
-    left: calc(50% - 28px);
+    z-index: 6;
+    width: 1600px;
+    top: calc(50% + 110px);
+    left: calc(50% - 15px);
 }
 
 .fog-6{
     position: absolute;
-    z-index: 16;
-    width: 1418px;
-    top: calc(50% + 177px);
-    left: calc(50% - 30px);
+    z-index: 5;
+    width: 590px;
+    top: calc(50% + 223px);
+    left: calc(50% - 60px);
 }
 
 .fog-7{
@@ -154,7 +155,7 @@ main{
 
 .mountain-2{
     position: absolute;
-    z-index: 17;
+    z-index: 8;
     width: 625px;
     top: calc(50% + 188px);
     left: calc(50% - 412px);
@@ -170,49 +171,49 @@ main{
 
 .mountain-4{
     position: absolute;
-    z-index: 14;
-    width: 717px;
-    top: calc(50% + 221px);
+    z-index: 8;
+    width: 780px;
+    top: calc(50% + 196px);
     left: calc(50% - 381.5px);
 }
 
-.mountain-5{
+/* .mountain-5{
     position: absolute;
     z-index: 12;
     width: 583px;
-    top: calc(50% + 269px);
+    top: calc(50% + 250px);
     left: calc(50% + 130px);
-}
+} */
 
 .mountain-6{
     position: absolute;
     z-index: 10;
-    width: 383.5px;
-    top: calc(50% + 86.5px);
+    width: 408px;
+    top: calc(50% + 60px);
     left: calc(50% + 590px);
 }
 
 .mountain-7{
     position: absolute;
     z-index: 8;
-    width: 515px;
-    top: calc(50% + 134px);
+    width: 538px;
+    top: calc(50% + 123px);
     left: calc(50% + 305px);
 }
 
 .mountain-8{
     position: absolute;
     z-index: 6;
-    width: 786px;
-    top: calc(50% + 96px);
+    width: 810px;
+    top: calc(50% + 86px);
     left: calc(50% - 202px);
 }
 
 .mountain-9{
     position: absolute;
     z-index: 5;
-    width: 463px;
-    top: calc(50% + 119px);
+    width: 470px;
+    top: calc(50% + 113px);
     left: calc(50% - 457px);
 }
 
@@ -227,7 +228,7 @@ main{
 .text{
     position: absolute;
     z-index: 9;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -237,14 +238,14 @@ main{
 }
 
 .text h2{
-    font-size: 4.5rem;
+    font-size: 2rem;
     font-weight: 100;
     line-height: 0.88;
 }
 
 .text h1{
-    font-weight: 800;
-    font-size:6rem;  
+    font-weight: 8200;
+    font-size:3rem;  
 }
 
 .sun-rays{
