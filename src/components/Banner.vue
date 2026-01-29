@@ -3,27 +3,27 @@
     <main>
         <div class="vignette"></div>
 
-        <img src="../assets/img/background.png" alt="" data-speedx="0.3" data-speedy="0.38" data-speedz="0" class="parallax bg-img">
-        <img src="../assets/img/fog_7.png" alt="" data-speedx="0.27" data-speedy="0.32" data-speedz="0" class="parallax fog-7">
-        <img src="../assets/img/mountain_10.png" alt="" data-speedx="0.195" data-speedy="0.305" data-speedz="0" class="parallax mountain-10">
-        <img src="../assets/img/fog_6.png" alt="" data-speedx="0.25" data-speedy="0.28" data-speedz="0" class="parallax fog-6">
-        <img src="../assets/img/mountain_9.png" alt="" data-speedx="0.125" data-speedy="0.155" data-speedz="0.15" class="parallax mountain-9">
-        <img src="../assets/img/mountain_8.png" alt="" data-speedx="0.1" data-speedy="0.11" data-speedz="0" class="parallax mountain-8">
-        <img src="../assets/img/fog_5.png" alt="" data-speedx="0.16" data-speedy="0.105" data-speedz="0" class="parallax fog-5">
-        <img src="../assets/img/mountain_7.png" alt="" data-speedx="0.1" data-speedy="0.07" data-speedz="0" class="parallax mountain-7">
-        <div class="text parallax" data-speedx="0.07">
+        <img src="../assets/img/background.png" alt="" data-speedx="0.3" data-speedy="0.38" data-speedz="0" data-rotate="0" class="parallax bg-img">
+        <img src="../assets/img/fog_7.png" alt="" data-speedx="0.27" data-speedy="0.32" data-speedz="0" data-rotate="0" class="parallax fog-7">
+        <img src="../assets/img/mountain_10.png" alt="" data-speedx="0.195" data-speedy="0.305" data-speedz="0" data-rotate="0" class="parallax mountain-10">
+        <img src="../assets/img/fog_6.png" alt="" data-speedx="0.25" data-speedy="0.28" data-speedz="0"data-rotate="0" class="parallax fog-6">
+        <img src="../assets/img/mountain_9.png" alt="" data-speedx="0.125" data-speedy="0.155" data-speedz="0.15" data-rotate="0" class="parallax mountain-9">
+        <img src="../assets/img/mountain_8.png" alt="" data-speedx="0.1" data-speedy="0.11" data-speedz="0" data-rotate="0.02" class="parallax mountain-8">
+        <img src="../assets/img/fog_5.png" alt="" data-speedx="0.16" data-speedy="0.105" data-speedz="0" data-rotate="0" class="parallax fog-5">
+        <img src="../assets/img/mountain_7.png" alt="" data-speedx="0.1" data-speedy="0.07" data-speedz="0" data-rotate="0.09" class="parallax mountain-7">
+        <div class="text parallax" data-speedx="0.07" data-rotate="0.11">
             <h2> Emily Dickinson</h2>
             <h1>"A natureza é o que sabemos sem ter a arte de exprimi-lo"</h1> 
         </div>
-        <img src="../assets/img/mountain_6.png" alt="" data-speedx="0.065" data-speedy="0.05" data-speedz="0.05" class="parallax mountain-6">
-        <img src="../assets/img/fog_4.png" alt="" data-speedx="0.135" data-speedy="0.2" data-speedz="0" class="parallax fog-4">
-        <img src="../assets/img/mountain_5.png" alt="" data-speedx="0.8" data-speedy="0.08" data-speedz="0.13" class="parallax mountain-5">
-        <img src="../assets/img/fog_3.png" alt="" data-speedx="0.11" data-speedy="0.018" data-speedz="0" class="parallax fog-3">
-        <img src="../assets/img/mountain_4.png" alt="" data-speedx="0.059" data-speedy="0.024" data-speedz="0" class="parallax mountain-4">
-        <img src="../assets/img/mountain_3.png" alt="" data-speedx="0.04" data-speedy="0.018" data-speedz="0.32" class="parallax mountain-3">
-        <img src="../assets/img/fog_2.png" alt="" data-speedx="0.15" data-speedy="0.0115" data-speedz="0" class="parallax fog-2">
-        <img src="../assets/img/mountain_2.png" alt="" data-speedx="0.0235" data-speedy="0.013" data-speedz="0" class="parallax mountain-2">
-        <img src="../assets/img/mountain-1.png" alt="" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" class="parallax mountain-1">
+        <img src="../assets/img/mountain_6.png" alt="" data-speedx="0.065" data-speedy="0.05" data-speedz="0.05" data-rotate="0.12" class="parallax mountain-6">
+        <img src="../assets/img/fog_4.png" alt="" data-speedx="0.135" data-speedy="0.2" data-speedz="0" data-rotate="0" class="parallax fog-4">
+        <img src="../assets/img/mountain_5.png" alt="" data-speedx="0.8" data-speedy="0.08" data-speedz="0.13" data-rotate="0" class="parallax mountain-5">
+        <img src="../assets/img/fog_3.png" alt="" data-speedx="0.11" data-speedy="0.018" data-speedz="0" data-rotate="0.14" class="parallax fog-3">
+        <img src="../assets/img/mountain_4.png" alt="" data-speedx="0.059" data-speedy="0.024" data-speedz="0" data-rotate="0.05" class="parallax mountain-4">
+        <img src="../assets/img/mountain_3.png" alt="" data-speedx="0.04" data-speedy="0.018" data-speedz="0.32" data-rotate="0.05" class="parallax mountain-3">
+        <img src="../assets/img/fog_2.png" alt="" data-speedx="0.15" data-speedy="0.0115" data-speedz="0" data-rotate="0" class="parallax fog-2">
+        <img src="../assets/img/mountain_2.png" alt="" data-speedx="0.0235" data-speedy="0.013" data-speedz="0" data-rotate="0.15" class="parallax mountain-2">
+        <img src="../assets/img/mountain-1.png" alt="" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" data-rotate="0.2" class="parallax mountain-1">
         <img src="../assets/img/sun_rays.png" alt="" class="sun-rays">
         <img src="../assets/img/black_shadow.png" alt="" class="black-shadow">
         <img src="../assets/img/fog_1.png" alt="" data-speedx="0.12" data-speedy="0.01" data-speedz="0" class="parallax fog-1">
@@ -32,40 +32,54 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+
 export default {
   name: 'Banner',
-
-  data() {
-    return {
-      xValue: 0,
-      yValue: 0,
-      rotateDegree : 0
-    };
-  },
 
   mounted() {
     const parallax_el = document.querySelectorAll('.parallax');
 
-    window.addEventListener('mousemove', (e) => {
-      this.xValue = e.clientX - window.innerWidth / 2;
-      this.yValue = e.clientY - window.innerHeight / 2;
-      this.rotateDegree = (this.xValue / window.innerWidth) * 20;
+    const updateParallax = (xValue, yValue) => {
+      const rotateDegree = (xValue / window.innerWidth) * 20;
 
       parallax_el.forEach((el) => {
-
         const speedx = parseFloat(el.dataset.speedx) || 0;
         const speedy = parseFloat(el.dataset.speedy) || 0;
         const speedz = parseFloat(el.dataset.speedz) || 0;
+        const rotate = parseFloat(el.dataset.rotate) || 0;
 
-        const isInLeft = parseFloat(getComputedStyle(el).left) < window.innerWidth / 2 ? 1 : -1;
-        
-        const zValue = e.clientX - parseFloat(getComputedStyle(el).left) * isInLeft * 0.1;
+        const zValue = xValue * speedz;
 
-       el.style.transform = `perspective(2300px) translateX(calc(-50% + ${-this.xValue * speedx}px)) rotateY(${this.rotateDegree}deg) translateY(calc(-50% + ${this.yValue * speedy}px)) translateZ(${zValue * speedz}px)`;
+        el.style.transform = `
+          perspective(2300px)
+          translateX(calc(-50% + ${-xValue * speedx}px))
+          translateY(calc(-50% + ${yValue * speedy}px))
+          translateZ(${zValue}px)
+          rotateY(${rotateDegree * rotate}deg)
+        `;
       });
+    };
+
+    // Posição inicial (quando a página carrega)
+    updateParallax(0, 0);
+
+    // Animação inicial com GSAP
+     gsap.from(".bg-img", {
+        top: `${document.querySelector('.bg-img').offsetHeight / 2}px`,
+        duration: 3,
+    });
+
+    // Atualiza conforme o mouse se move
+    window.addEventListener('mousemove', (e) => {
+      const xValue = e.clientX - window.innerWidth / 2;
+      const yValue = e.clientY - window.innerHeight / 2;
+
+      updateParallax(xValue, yValue);
     });
   }
 };
+
 </script>
 
 <style scoped>
