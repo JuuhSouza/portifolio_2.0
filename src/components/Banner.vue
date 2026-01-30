@@ -15,18 +15,18 @@
             <h2> Emily Dickinson</h2>
             <h1>"A natureza é o que sabemos sem ter a arte de exprimi-lo"</h1> 
         </div>
-        <img src="../assets/img/mountain_6.png" alt="" data-speedx="0.065" data-speedy="0.05" data-speedz="0.05" data-rotate="0.12" class="parallax mountain-6">
-        <img src="../assets/img/fog_4.png" alt="" data-speedx="0.135" data-speedy="0.2" data-speedz="0" data-rotate="0" class="parallax fog-4">
-        <img src="../assets/img/mountain_5.png" alt="" data-speedx="0.8" data-speedy="0.08" data-speedz="0.13" data-rotate="0" class="parallax mountain-5">
-        <img src="../assets/img/fog_3.png" alt="" data-speedx="0.11" data-speedy="0.018" data-speedz="0" data-rotate="0.14" class="parallax fog-3">
-        <img src="../assets/img/mountain_4.png" alt="" data-speedx="0.059" data-speedy="0.024" data-speedz="0" data-rotate="0.05" class="parallax mountain-4">
-        <img src="../assets/img/mountain_3.png" alt="" data-speedx="0.04" data-speedy="0.018" data-speedz="0.32" data-rotate="0.05" class="parallax mountain-3">
-        <img src="../assets/img/fog_2.png" alt="" data-speedx="0.15" data-speedy="0.0115" data-speedz="0" data-rotate="0" class="parallax fog-2">
-        <img src="../assets/img/mountain_2.png" alt="" data-speedx="0.0235" data-speedy="0.013" data-speedz="0" data-rotate="0.15" class="parallax mountain-2">
-        <img src="../assets/img/mountain-1.png" alt="" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" data-rotate="0.2" class="parallax mountain-1">
+        <img src="../assets/img/mountain_6.png" alt="" data-speedx="0.065" data-speedy="0.05" data-speedz="0.05" data-rotate="0.12" data-distance="2300" class="parallax mountain-6">
+        <img src="../assets/img/fog_4.png" alt="" data-speedx="0.135" data-speedy="0.2" data-speedz="0" data-rotate="0" data-distance="2400" class="parallax fog-4">
+        <img src="../assets/img/mountain_5.png" alt="" data-speedx="0.8" data-speedy="0.08" data-speedz="0.13" data-rotate="0" data-distance="2550" class="parallax mountain-5">
+        <img src="../assets/img/fog_3.png" alt="" data-speedx="0.11" data-speedy="0.018" data-speedz="0" data-rotate="0.14" data-distance="2800" class="parallax fog-3">
+        <img src="../assets/img/mountain_4.png" alt="" data-speedx="0.059" data-speedy="0.024" data-speedz="0" data-rotate="0.05" data-distance="3200" class="parallax mountain-4">
+        <img src="../assets/img/mountain_3.png" alt="" data-speedx="0.04" data-speedy="0.018" data-speedz="0.32" data-rotate="0.05" data-distance="3400" class="parallax mountain-3">
+        <img src="../assets/img/fog_2.png" alt="" data-speedx="0.15" data-speedy="0.0115" data-speedz="0" data-rotate="0" data-distance="3600" class="parallax fog-2">
+        <img src="../assets/img/mountain_2.png" alt="" data-speedx="0.0235" data-speedy="0.013" data-speedz="0" data-rotate="0.15" data-distance="3800" class="parallax mountain-2">
+        <img src="../assets/img/mountain_1.png" alt="" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" data-rotate="0.2" data-distance="4000" class="parallax mountain-1">
         <img src="../assets/img/sun_rays.png" alt="" class="sun-rays">
         <img src="../assets/img/black_shadow.png" alt="" class="black-shadow">
-        <img src="../assets/img/fog_1.png" alt="" data-speedx="0.12" data-speedy="0.01" data-speedz="0" class="parallax fog-1">
+        <img src="../assets/img/fog_1.png" alt="" data-speedx="0.12" data-speedy="0.01" data-speedz="0" data-distance="4200" class="parallax fog-1">
         
     </main>
 </template>
@@ -65,12 +65,13 @@ export default {
     updateParallax(0, 0);
 
       // Animação inicial com GSAP
-
-      parallax_el.forEach(el => {
-        gsap.from(el, {
-        top: `${el.offsetHeight / 2 + el.dataset.distance}px`,
-        duration: 1,
-        });
+      Array.from(parallax_el)
+          .filter(el => !el.classList.contains("text"))
+          .forEach(el => {
+            gsap.from(el, {
+            top: `${el.offsetHeight / 2 + +el.dataset.distance}px`,
+            duration: 3.5,
+            });
       })
       
     // Atualiza conforme o mouse se move
