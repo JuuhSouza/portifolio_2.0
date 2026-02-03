@@ -40,6 +40,7 @@ header{
     top: 0;
     left: 0;
     position: absolute;
+    position: fixed;
     width: 100%;
     border-bottom: 1px solid var(--nav-color-border);
 }
@@ -64,9 +65,10 @@ nav ul a{
     color: var(--nav-color-a);
     padding: 0 1.5rem;
     transform: uppercase;
-   /*  font-weight: 300; */
+    font-weight: 480;
     font-size: var(--font-size);
-    transition: all .3s ease
+    text-shadow: 1px 1px 2px rgb(27, 27, 27);
+    transition: all .3s ease;
 }
 
 nav ul a:hover{

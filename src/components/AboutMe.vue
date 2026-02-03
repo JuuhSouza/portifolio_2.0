@@ -18,7 +18,7 @@ export default {
 <style scoped>
 .about {
   min-height: 100vh;
-  background: #0d0d0d;
+  background: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: center;

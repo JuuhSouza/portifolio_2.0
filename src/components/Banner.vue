@@ -17,13 +17,13 @@
         </div>
         <img src="../assets/img/mountain_6.png" alt="" data-speedx="0.065" data-speedy="0.05" data-speedz="0.05" data-rotate="0.12" data-distance="2300" class="parallax mountain-6">
         <img src="../assets/img/fog_4.png" alt="" data-speedx="0.135" data-speedy="0.2" data-speedz="0" data-rotate="0" data-distance="2400" class="parallax fog-4">
-        <img src="../assets/img/mountain_5.png" alt="" data-speedx="0.8" data-speedy="0.08" data-speedz="0.13" data-rotate="0" data-distance="2550" class="parallax mountain-5">
+        <img src="../assets/img/mountain_5.png" alt="" data-speedx="0.08" data-speedy="0.08" data-speedz="0.13" data-rotate="0" data-distance="2550" class="parallax mountain-5">
         <img src="../assets/img/fog_3.png" alt="" data-speedx="0.11" data-speedy="0.018" data-speedz="0" data-rotate="0.14" data-distance="2800" class="parallax fog-3">
         <img src="../assets/img/mountain_4.png" alt="" data-speedx="0.059" data-speedy="0.024" data-speedz="0" data-rotate="0.05" data-distance="3200" class="parallax mountain-4">
         <img src="../assets/img/mountain_3.png" alt="" data-speedx="0.04" data-speedy="0.018" data-speedz="0.32" data-rotate="0.05" data-distance="3400" class="parallax mountain-3">
         <img src="../assets/img/fog_2.png" alt="" data-speedx="0.15" data-speedy="0.0115" data-speedz="0" data-rotate="0" data-distance="3600" class="parallax fog-2">
         <img src="../assets/img/mountain_2.png" alt="" data-speedx="0.0235" data-speedy="0.013" data-speedz="0" data-rotate="0.15" data-distance="3800" class="parallax mountain-2">
-        <img src="../assets/img/mountain_1.png" alt="" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" data-rotate="0.2" data-distance="4000" class="parallax mountain-1">
+        <img src="../assets/img/mountain_1.png" alt="" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" data-rotate="0.2" data-distance="4000" class="parallax mountain-1"><!-- problema -->
         <img src="../assets/img/sun_rays.png" alt="" class="sun-rays">
         <img src="../assets/img/black_shadow.png" alt="" class="black-shadow">
         <img src="../assets/img/fog_1.png" alt="" data-speedx="0.12" data-speedy="0.01" data-speedz="0" data-distance="4200" class="parallax fog-1">
@@ -41,7 +41,7 @@ export default {
     const parallax_el = document.querySelectorAll('.parallax');
 
     const updateParallax = (xValue, yValue) => {
-      const rotateDegree = (xValue / window.innerWidth) * 20;
+    const rotateDegree = (xValue / window.innerWidth) * 20;
 
       parallax_el.forEach((el) => {
         const speedx = parseFloat(el.dataset.speedx) || 0;
@@ -97,7 +97,9 @@ main{
 
 .parallax{
     pointer-events: none;
-    transition: 0.60s cubic-bezier(0.2, 0.49, 0.38, 0.99);
+    transition: 0.45s cubic-bezier(0.2, 0.49, 0.38, 0.99);
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 .bg-img{
@@ -169,7 +171,7 @@ main{
     z-index: 18;
     width: 450px;
     top: calc(50% + 91.5px);
-    left: calc(50% - 601px);
+    left: calc(46% - 601px);
 }
 
 .mountain-2{
@@ -196,13 +198,13 @@ main{
     left: calc(50% - 381.5px);
 }
 
-/* .mountain-5{
+.mountain-5{
     position: absolute;
     z-index: 12;
     width: 583px;
     top: calc(50% + 250px);
     left: calc(50% + 130px);
-} */
+}
 
 .mountain-6{
     position: absolute;
@@ -294,6 +296,8 @@ main{
     height: 100%;
     top: 0;
     left: 0;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%);
+    /* background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%);
+    background-position: cover; */
+    background: linear-gradient(0deg,rgba(13, 8, 5, 1) 0%, rgba(2, 7, 13, 0) 51%);
 }
 </style>

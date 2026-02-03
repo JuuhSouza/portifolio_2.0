@@ -6,7 +6,7 @@
     /* NAV BAR */
     --nav-background-color: #262626;
     --nav-color-border: #ccc;
-    --nav-color-a: #F2F2F2;
+    --nav-color-a: #ffffff;
     --nav-color-hover: #7D89A1;
     --font-size: 1.2em;
 
@@ -16,15 +16,17 @@
 
     /* ABOUT ME  */
     --title-color: #bbbbbb;
-    --p-color: #2B402A;
+    --p-color: #f5f4f4;
     --box-shadow-card: #757575;
     --border-image: #465947;
+    --background-color: #0D0805;
 
-    /* CARDS  */
-    --title-color-card: #260101;
+    /* CARDS - SOFTSKILLS  */
+    --title-color-card: #aaa9a9;
     --card-border: #F2CF63;
-    --p-color-card: #590202;
+    --p-color-card: #c0c0c0;
     --box-shadow-card: #757575;
+    --background-color-card: #00040D;
 
     /* FOOTER */
     --color-text: #F2CF63;
