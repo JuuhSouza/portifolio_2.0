@@ -70,7 +70,8 @@ export default {
           .forEach(el => {
             gsap.from(el, {
             top: `${el.offsetHeight / 2 + +el.dataset.distance}px`,
-            duration: 3.5,
+                duration: 3.5,
+            ease: "power3.out"
             });
       })
       
@@ -251,7 +252,8 @@ main{
     transform: translate(-50%, -50%);
     text-align: center;
     text-transform: uppercase;
-    color: red;
+    color: var(--color-p);
+    text-shadow: 1px 0 6px var(--background-color);
     pointer-events: auto;
 }
 

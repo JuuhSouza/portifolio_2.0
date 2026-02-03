@@ -1,23 +1,30 @@
-:root{
+:root {
     /* FONTES */
-    --font:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font-p:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-p: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
     /* NAV BAR */
-    --nav-background-color:#262626;
-    --nav-color:#FFFFFF;
-    --nav-color-hover:#7D89A1;
-    --font-size:1.2em;
-    
+    --nav-background-color: #262626;
+    --nav-color-border: #ccc;
+    --nav-color-a: #F2F2F2;
+    --nav-color-hover: #7D89A1;
+    --font-size: 1.2em;
+
     /* BANNER */
-    --color-p:#f4f4f4bb;
-    --background-color:#26010477;
+    --color-p: #BFBFBF;
+    --background-color: #232626;
+
+    /* ABOUT ME  */
+    --title-color: #bbbbbb;
+    --p-color: #2B402A;
+    --box-shadow-card: #757575;
+    --border-image: #465947;
 
     /* CARDS  */
-    --title-color-card:#260101;
-    --card-border:#F2CF63;
-    --p-color-card:#590202;
-    --box-shadow-card:#757575;
+    --title-color-card: #260101;
+    --card-border: #F2CF63;
+    --p-color-card: #590202;
+    --box-shadow-card: #757575;
 
     /* FOOTER */
     --color-text: #F2CF63;

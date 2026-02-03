@@ -41,7 +41,7 @@ header{
     left: 0;
     position: absolute;
     width: 100%;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--nav-color-border);
 }
 
 nav{
@@ -61,11 +61,16 @@ nav ul{
 
 nav ul a{
     text-decoration: none;
-    color: white;
+    color: var(--nav-color-a);
     padding: 0 1.5rem;
     transform: uppercase;
    /*  font-weight: 300; */
-    font-size: 1.2rem;
+    font-size: var(--font-size);
+    transition: all .3s ease
+}
+
+nav ul a:hover{
+    color: var(--nav-color-hover);
 }
 
 /* .hamburguer-menu{
