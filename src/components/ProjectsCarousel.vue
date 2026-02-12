@@ -48,11 +48,47 @@ export default {
   components: { Swiper, SwiperSlide },
   setup() {
     const projects = [
-      { id: 1, title: 'projeo 1', description: '...', image: new URL('../assets/img/brasao.tucano.png', import.meta.url).href , link: 'https://github.com/JuuhSouza/portifolio_2.0/blob/main/src/components/SoftSkills.vue'
+      {
+        id: 1,
+        title: 'Portifólio 1.0',
+        description: 'HTML , CSS e JavaScript',
+        image: new URL('../assets/img/Projeto_Portifolio1.0.png', import.meta.url).href,
+        link: 'https://juuhsouza.github.io/portifolio1/'
         },
-      { id: 2, title: 'projeo 2', description: '...', image: new URL('../assets/img/brasao.tucano.png', import.meta.url).href 
+      {
+        id: 2,
+        title: 'Jogo da velha',
+        description: 'HTML , CSS e JavaScript',
+        image: new URL('../assets/img/Projeto_JogoDaVelha.png', import.meta.url).href,
+        link: 'https://juuhsouza.github.io/JogoDaVelha/'
         },
-      { id: 3, title: 'projeo 3', description: '...', image: new URL('../assets/img/brasao.tucano.png', import.meta.url).href 
+      {
+        id: 3,
+        title: 'To do List',
+        description: 'HTML , CSS e JavaScript',
+        image: new URL('../assets/img/Projeto_ToDoList.png', import.meta.url).href,
+        link: 'https://juuhsouza.github.io/ListaDeTarefas/'
+        },
+      {
+        id: 4,
+        title: 'Calculadora',
+        description: 'HTML , CSS e JavaScript',
+        image: new URL('../assets/img/Projeto_Calculadora.png', import.meta.url).href,
+        link: 'https://juuhsouza.github.io/calculadora/'
+        },
+      {
+        id: 5,
+        title: 'Souzas Pizzaria',
+        description: 'HTML , CSS , JavaScript e PHP',
+        image: new URL('../assets/img/Projeto_SouzasPizzaria.png', import.meta.url).href,
+        link: 'https://juuhsouza.github.io/SouzaPizzaria/'
+        },
+      {
+        id: 6,
+        title: 'Corte e Costura',
+        description: 'HTML , CSS e JavaScript',
+        image: new URL('../assets/img/Projeto_CorteCostura.png', import.meta.url).href,
+        link: 'https://juuhsouza.github.io/Corte-e-Costura/'
         },
     ];
 
