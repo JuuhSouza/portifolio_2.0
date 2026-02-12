@@ -7,11 +7,6 @@
             <li><router-link to="/">Início</router-link></li>
             <li><router-link to="/about">Sobre</router-link></li>
             <li><router-link to="/about">Soft Skills</router-link></li>
-            <!-- <li class="humburguer-menu">
-                <a href="#">
-                    <div class="bar"></div>
-                </a>
-            </li> -->
         </ul>
     </nav>
     </header>
@@ -74,28 +69,5 @@ nav ul a{
 nav ul a:hover{
     color: var(--nav-color-hover);
 }
-
-/* .hamburguer-menu{
-    padding-left:1.5rem ;
-}
-
-.hamburguer-menu a{
-    width: 37px;
-    height: 37px;
-    display: flex;
-    border-radius: 50%;
-    background-color: blue;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    text-align: center;
-}
-
-.hamburguer-menu .bar{
-    width: 52%;
-    height: 1.3rem;
-    background-color: white;
-    border-radius:2px ;
-}
- */
 
 </style>

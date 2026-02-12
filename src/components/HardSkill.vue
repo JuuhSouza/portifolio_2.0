@@ -1,48 +1,74 @@
 <template>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <div class="title">
-            <h1>Soft Skills</h1>
+            <h1>Hard Skills</h1>
         </div>
 
-    <div class="container-card" >  
+    <div class="container-card">  
         <div class="card-box" data-aos="fade-down-right">
             <div class="content">
-                <h1>Organização</h1> 
+                <i class="fa-brands fa-css3-alt"></i>
+                <p>CSS 3</p>
             </div>     
         </div>
         
-        <div class="card-box" data-aos="fade-right">
+        <div class="card-box" data-aos="fade-down-right">
             <div class="content">
-                <h1>Criatividade</h1> 
+               <i class="fa-brands fa-html5"></i>
+               <p>HTML 5</p>
             </div>     
         </div>
         
-        <div class="card-box" data-aos="fade-down-left">
+        <div class="card-box" data-aos="fade-down-right">
             <div class="content">
-                <h1>Trabalho em grupo</h1> 
+                <i class="fa-brands fa-vuejs"></i>
+                <p>Vue.js</p>
             </div>     
         </div>
-    
+
+        <div class="card-box" data-aos="fade-down-right">
+            <div class="content">
+                <i class="fa-brands fa-js"></i>
+                <p>JavaScript</p>
+            </div>     
+        </div>
+        
+        <div class="card-box" data-aos="fade-down-right">
+            <div class="content">
+                <img src="https://img.icons8.com/carbon-copy/2x/postgresql.png" alt=""> 
+                <p>PostgreSQL</p>
+            </div>     
+        </div>
+        
+        <div class="card-box" data-aos="fade-down-right">
+            <div class="content">
+                <i class="fa-brands fa-java"></i>
+                <p>Java</p> 
+            </div>     
+        </div>
+        
     </div>
 </template>
 
 <script>
 export default {
-  name: 'SoftSkills',
+  name: 'HardSkills',
 }
- 
+
 </script>
 
 <style scoped>
 .title h1{
-    background-color: #0D0805;
+    background-color: var(--background-color-card);
     text-align: center;
     font-size: 2.8em;
-    margin-top: -3em;
+ /*    margin-top: -3em; */
     padding: 1em 0;
     color: var(--title-color-card);
 }
 .container-card{
-    background: linear-gradient(0deg,rgba(0, 4, 13, 1) 0%, rgba(0, 4, 13, 1) 51%, #0d0805 88%);
+    background: var(--background-color-card);
     position: relative;
     display: flex;
     justify-content: center;
@@ -54,10 +80,8 @@ export default {
 
 .card-box{
     position: relative;
-    width: 400px;
-    height: 400px;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     box-shadow: inset 20px 20px 20px rgba(255, 255, 255, 0.2),
     25px 35px 20px rgba(255, 255, 255, 0.05),
     25px 30px 30px rgba(255, 255, 255, 0),
@@ -65,8 +89,7 @@ export default {
     transition: all 0.5s ease-in-out;
     display: flex;
     justify-content: center;
-    align-items: center;
-    transition: border-radius 0.5s ease-in-out, transform 0.3s ease !important;
+    align-items: center;transition: border-radius 0.5s ease-in-out, transform 0.3s ease !important;
 }
 
 .card-box:hover {
@@ -86,8 +109,16 @@ export default {
     border-radius: 35% 65% 31% 69% / 57% 59% 41% 43%;
 }
 
-.card-box:hover{
-    border-radius: 50% 
+.card-box:nth-child(4){
+    border-radius: 47% 53% 70% 30% / 30% 43% 57% 70%;
+}
+
+.card-box:nth-child(5){
+    border-radius: 61% 39% 52% 48% / 44% 59% 41% 56%;
+}
+
+.card-box:nth-child(6){
+    border-radius: 35% 65% 31% 69% / 57% 59% 41% 43%;
 }
 
 .card-box::before{
@@ -125,26 +156,19 @@ export default {
     gap: 15px;
 }
 
-.content h1{
-    font-size: 2em;
-    color: var(--title-color-card);
+.content img{
+    width: 100%;
+}
+
+.content i{
+    font-size: 8em;
+    color: white;
 }
 
 .content p{
-    font-size: 1.2em;
-    color: var(--p-color);
-    width: 300px auto;
-    height: 80px;
-    border-radius: 20%;
-    /* box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
-    inset -2px -5px 10px rgba(255, 255, 255, 0.1),
-    15px 15px 10px rgba(0, 0, 0, 0.5),
-    15px 10px 15px rgba(0, 0, 0, 0.5); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color: var(--title-color-card);
+    font-size: 1.5em;
+    color: white;
+    margin-top: -.9em;
 }
 
 </style>

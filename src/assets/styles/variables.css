@@ -15,13 +15,14 @@
     --background-color: #232626;
 
     /* ABOUT ME  */
-    --title-color: #bbbbbb;
-    --p-color: #f5f4f4;
+    --title-color-about: #BFBFBF;
+    --title-color-span: #465947;
+    --p-color-about: #f5f4f4;
     --box-shadow-card: #757575;
     --border-image: #465947;
-    --background-color: #0D0805;
+    --background-color-about: linear-gradient(0deg, rgba(13, 8, 5, 1) 19%, rgba(64, 64, 64, 1) 96%);
 
-    /* CARDS - SOFTSKILLS  */
+    /* CARDS - SOFTSKILLS - HARDSKILL*/
     --title-color-card: #aaa9a9;
     --card-border: #F2CF63;
     --p-color-card: #c0c0c0;

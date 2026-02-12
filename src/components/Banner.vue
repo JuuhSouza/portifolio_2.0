@@ -296,8 +296,6 @@ main{
     height: 100%;
     top: 0;
     left: 0;
-    /* background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%);
-    background-position: cover; */
-    background: linear-gradient(0deg,rgba(13, 8, 5, 1) 0%, rgba(2, 7, 13, 0) 51%);
+    background: linear-gradient(0deg,#404040 0%, rgba(2, 7, 13, 0) 51%);
 }
 </style>

@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 import NavBar from './components/navBar.vue'
 /* import Home from './views/Home.vue'; */
 
