@@ -1,59 +1,43 @@
 <template>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
+<section class="hardskills-section">
     <div class="title">
             <h1>Hard Skills</h1>
         </div>
 
     <div class="container-card">  
-        <div class="card-box" data-aos="fade-down-right">
+        <div class="card-box"
+            v-for="(skill, index) in skills"
+            :key="index" 
+            :class="'shape-' + (index % 3 + 1)"
+            data-aos="fade-down-right">
             <div class="content">
-                <i class="fa-brands fa-css3-alt"></i>
-                <p>CSS 3</p>
-            </div>     
-        </div>
-        
-        <div class="card-box" data-aos="fade-down-right">
-            <div class="content">
-               <i class="fa-brands fa-html5"></i>
-               <p>HTML 5</p>
-            </div>     
-        </div>
-        
-        <div class="card-box" data-aos="fade-down-right">
-            <div class="content">
-                <i class="fa-brands fa-vuejs"></i>
-                <p>Vue.js</p>
-            </div>     
-        </div>
+                <i v-if="skill.icon.startsWith('fa')" :class="skill.icon"></i>
+                <img v-else :src="skill.icon" :alt="skill.name">
 
-        <div class="card-box" data-aos="fade-down-right">
-            <div class="content">
-                <i class="fa-brands fa-js"></i>
-                <p>JavaScript</p>
+                <p>{{ skill.name }}</p>
             </div>     
-        </div>
-        
-        <div class="card-box" data-aos="fade-down-right">
-            <div class="content">
-                <img src="https://img.icons8.com/carbon-copy/2x/postgresql.png" alt=""> 
-                <p>PostgreSQL</p>
-            </div>     
-        </div>
-        
-        <div class="card-box" data-aos="fade-down-right">
-            <div class="content">
-                <i class="fa-brands fa-java"></i>
-                <p>Java</p> 
-            </div>     
-        </div>
-        
-    </div>
+        </div>      
+    </div>      
+</section>
 </template>
 
 <script>
 export default {
-  name: 'HardSkills',
+    name: 'HardSkills',
+    data() {
+        return {
+            skills: [
+                { name: 'CSS 3', icon: 'fa-brands fa-css3-alt' },
+                { name: 'HTML 5', icon: 'fa-brands fa-html5' },
+                { name: 'vue.js', icon: 'fa-brands fa-vuejs' },
+                { name: 'JavaScript', icon: 'fa-brands fa-js' },
+                { name: 'PostgreSQL', icon: 'https://img.icons8.com/carbon-copy/2x/postgresql.png' },
+                { name: 'Java', icon: 'fa-brands fa-java' },
+        ]
+    }
+  }
 }
 
 </script>
@@ -68,7 +52,7 @@ export default {
     color: var(--title-color-card);
 }
 .container-card{
-    background: var(--background-color-card);
+    background: var(--background-color-card-hardskill);
     position: relative;
     display: flex;
     justify-content: center;
@@ -97,29 +81,15 @@ export default {
     transform: scale(1.05) !important; /* Um leve aumento ajuda a ver que o hover funcionou */
 }
 
-.card-box:nth-child(1){
-    border-radius: 47% 53% 70% 30% / 30% 43% 57% 70%;
+.shape-1 { 
+    border-radius: 47% 53% 70% 30% / 30% 43% 57% 70%; 
 }
-
-.card-box:nth-child(2){
-    border-radius: 61% 39% 52% 48% / 44% 59% 41% 56%;
+.shape-2 { 
+    border-radius: 61% 39% 52% 48% / 44% 59% 41% 56%; 
 }
-
-.card-box:nth-child(3){
-    border-radius: 35% 65% 31% 69% / 57% 59% 41% 43%;
-}
-
-.card-box:nth-child(4){
-    border-radius: 47% 53% 70% 30% / 30% 43% 57% 70%;
-}
-
-.card-box:nth-child(5){
-    border-radius: 61% 39% 52% 48% / 44% 59% 41% 56%;
-}
-
-.card-box:nth-child(6){
-    border-radius: 35% 65% 31% 69% / 57% 59% 41% 43%;
-}
+.shape-3 {
+     border-radius: 35% 65% 31% 69% / 57% 59% 41% 43%; 
+    }
 
 .card-box::before{
     content: '';
@@ -162,12 +132,12 @@ export default {
 
 .content i{
     font-size: 8em;
-    color: white;
+    color: var(--icone-hardskill);
 }
 
 .content p{
     font-size: 1.5em;
-    color: white;
+    color: var(--icone-hardskill);
     margin-top: -.9em;
 }
 

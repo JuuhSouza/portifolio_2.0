@@ -1,4 +1,7 @@
 <template>
+<!--   <div class="background-plant">
+    <img src="../assets/img/hill5.png" alt="Plant">
+  </div> -->
   <section class="about">
     <img src="../assets/img/brasao.tucano.png" />
     <div class="text-about">
@@ -16,6 +19,15 @@ export default {
 </script>
 
 <style scoped>
+.background-plant{
+  margin-top: -40em;
+  background-color: var(--background-color);
+}
+
+.background-plant img{
+  width: 100%;
+}
+
 .about {
   min-height: 100vh;
   background: var(--background-color-about);
@@ -23,7 +35,6 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  margin-top: -5em;
   margin-top: -3em;
   padding: 18em;
 }
@@ -43,7 +54,7 @@ export default {
 .text-about h1{
   font-size: 2em;
   margin: 20px 1em;
-  color: var(--title-color-about);
+  color: var(--title-color);
 }
 
 .text-about span{
@@ -53,7 +64,7 @@ export default {
 .text-about p{
   font-size: 1.2em;
   margin: 20px 1em;
-  color: var(--p-color-about);
+  color: var(--p-color);
 }
 
 

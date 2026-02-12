@@ -1,40 +1,40 @@
 <template>
+    <section class="softskill-content">
     <div class="title">
             <h1>Soft Skills</h1>
         </div>
-
     <div class="container-card" >  
-        <div class="card-box" data-aos="fade-down-right">
+        <div v-for="(skill, index) in skills"
+        :key="index"
+        class="card-box"
+        data-aos="fade-down-right">
             <div class="content">
-                <h1>Organização</h1> 
+                <h1>{{ skill.name }}</h1> 
             </div>     
         </div>
-        
-        <div class="card-box" data-aos="fade-right">
-            <div class="content">
-                <h1>Criatividade</h1> 
-            </div>     
-        </div>
-        
-        <div class="card-box" data-aos="fade-down-left">
-            <div class="content">
-                <h1>Trabalho em grupo</h1> 
-            </div>     
-        </div>
-    
     </div>
+
+    </section>
 </template>
 
 <script>
 export default {
-  name: 'SoftSkills',
+    name: 'SoftSkills',
+    data() {
+        return {
+            skills: [
+            {name : 'Criatividade'},
+            {name : 'Trabalho em equipe'},
+            {name : 'Organização'}, 
+        ]
+    }
+  }
 }
- 
 </script>
 
 <style scoped>
 .title h1{
-    background-color: #0D0805;
+    background-color: var(--background-color-card);
     text-align: center;
     font-size: 2.8em;
     margin-top: -3em;
@@ -42,7 +42,7 @@ export default {
     color: var(--title-color-card);
 }
 .container-card{
-    background: linear-gradient(0deg,rgba(0, 4, 13, 1) 0%, rgba(0, 4, 13, 1) 51%, #0d0805 88%);
+    background: var(--background-color-card);
     position: relative;
     display: flex;
     justify-content: center;
@@ -54,8 +54,6 @@ export default {
 
 .card-box{
     position: relative;
-    width: 400px;
-    height: 400px;
     width: 350px;
     height: 350px;
     box-shadow: inset 20px 20px 20px rgba(255, 255, 255, 0.2),
@@ -65,7 +63,6 @@ export default {
     transition: all 0.5s ease-in-out;
     display: flex;
     justify-content: center;
-    align-items: center;
     transition: border-radius 0.5s ease-in-out, transform 0.3s ease !important;
 }
 
@@ -73,7 +70,6 @@ export default {
     border-radius: 50% !important;
     transform: scale(1.05) !important; /* Um leve aumento ajuda a ver que o hover funcionou */
 }
-
 .card-box:nth-child(1){
     border-radius: 47% 53% 70% 30% / 30% 43% 57% 70%;
 }
@@ -84,10 +80,6 @@ export default {
 
 .card-box:nth-child(3){
     border-radius: 35% 65% 31% 69% / 57% 59% 41% 43%;
-}
-
-.card-box:hover{
-    border-radius: 50% 
 }
 
 .card-box::before{
@@ -126,13 +118,8 @@ export default {
 }
 
 .content h1{
-    font-size: 2em;
-    color: var(--title-color-card);
-}
-
-.content p{
-    font-size: 1.2em;
-    color: var(--p-color);
+    position: relative;
+    padding: 1.5em;
     width: 300px auto;
     height: 80px;
     border-radius: 20%;

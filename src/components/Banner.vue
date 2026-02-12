@@ -2,6 +2,7 @@
 
     <main>
         <div class="vignette"></div>
+        <div class="vignette-img"></div>
 
         <img src="../assets/img/background.png" alt="" data-speedx="0.3" data-speedy="0.38" data-speedz="0" data-rotate="0" data-distance="-200" class="parallax bg-img">
         <img src="../assets/img/fog_7.png" alt="" data-speedx="0.27" data-speedy="0.32" data-speedz="0" data-rotate="0" data-distance="850" class="parallax fog-7">
@@ -296,6 +297,20 @@ main{
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(0deg,#404040 0%, rgba(2, 7, 13, 0) 51%);
+    /* background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%);
+    background-position: cover; */
+    background: linear-gradient(0deg,#444444 0%, rgba(2, 7, 13, 0) 51%);
 }
+
+.vignette-img{
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    top: 20em;
+    left: 0;
+    background-image: url(../assets/img/fog_6.png);
+    background-repeat: no-repeat;
+}
+
 </style>
