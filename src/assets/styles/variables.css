@@ -45,5 +45,8 @@
     --water-btn-hover-color: #9CCED9;
 
     /* FOOTER */
-    --color-text: #F2CF63;
+    --color-text: white;
+    --background-color-footer: linear-gradient(0deg, rgba(53, 135, 242, 1) 19%, rgba(1, 31, 38, 1) 96%);
+    --background-color-card-footer: #3587F2;
+
 }
