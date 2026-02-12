@@ -2,7 +2,7 @@
   <section class="projects-section">
 <!--     <div class="water-light"></div> -->
     
-    <h2 class="title">Projetos antigos</h2>
+    <h2 class="title">Projetos Novos</h2>
     
     <swiper
       :effect="'coverflow'"
@@ -44,52 +44,24 @@ import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 export default {
-    name : "ProjectsCarousel",
+    name : "NewProjectsCarousel",
   components: { Swiper, SwiperSlide },
   setup() {
     const projects = [
       {
         id: 1,
-        title: 'Portifólio 1.0',
-        description: 'HTML , CSS e JavaScript',
-        image: new URL('../assets/img/Projeto_Portifolio1.0.png', import.meta.url).href,
-        link: 'https://juuhsouza.github.io/portifolio1/'
+        title: 'Make your burger',
+        description: 'HTML , CSS e vue.js',
+        image: new URL('../assets/img/Projeto_MakeYourBurger.png', import.meta.url).href,
+        link: 'https://github.com/JuuhSouza/Projeto_make_your_burger'
         },
       {
         id: 2,
-        title: 'Jogo da velha',
-        description: 'HTML , CSS e JavaScript',
+        title: '...',
+        description: '...',
         image: new URL('../assets/img/Projeto_JogoDaVelha.png', import.meta.url).href,
-        link: 'https://juuhsouza.github.io/JogoDaVelha/'
-        },
-      {
-        id: 3,
-        title: 'To do List',
-        description: 'HTML , CSS e JavaScript',
-        image: new URL('../assets/img/Projeto_ToDoList.png', import.meta.url).href,
-        link: 'https://juuhsouza.github.io/ListaDeTarefas/'
-        },
-      {
-        id: 4,
-        title: 'Calculadora',
-        description: 'HTML , CSS e JavaScript',
-        image: new URL('../assets/img/Projeto_Calculadora.png', import.meta.url).href,
-        link: 'https://juuhsouza.github.io/calculadora/'
-        },
-      {
-        id: 5,
-        title: 'Souzas Pizzaria',
-        description: 'HTML , CSS , JavaScript e PHP',
-        image: new URL('../assets/img/Projeto_SouzasPizzaria.png', import.meta.url).href,
-        link: 'https://juuhsouza.github.io/SouzaPizzaria/'
-        },
-      {
-        id: 6,
-        title: 'Corte e Costura',
-        description: 'HTML , CSS e JavaScript',
-        image: new URL('../assets/img/Projeto_CorteCostura.png', import.meta.url).href,
-        link: 'https://juuhsouza.github.io/Corte-e-Costura/'
-        },
+        link: '...'
+        }
     ];
 
     return { projects, modules: [EffectCoverflow, Pagination] };
@@ -119,11 +91,12 @@ export default {
   font-size: 3rem;
   text-shadow: 0 0 20px #a0e9ff80;
   margin-bottom: 50px;
+  margin-top: -2em;
 }
 
 .swiper {
-   padding: 5px 0; 
-  }
+    padding: 5px 0; 
+}
 
 .swiper-slide {
   width: 320px;
