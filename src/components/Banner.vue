@@ -1,6 +1,6 @@
 <template>
 
-    <main>
+    <main id="home">
         <div class="vignette"></div>
         <div class="vignette-img"></div>
 

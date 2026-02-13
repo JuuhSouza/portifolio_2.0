@@ -1,10 +1,27 @@
 <template>
-  <Banner/>
-  <AboutMe/>
-  <SoftSkills/>
-  <HardSkills/>
-  <ProjectsCarousel/>
-  <NewProjectsCarousel/>
+  <section id="home">
+     <Banner/>
+  </section>
+
+  <section>
+      <AboutMe/>
+  </section>
+
+  <section id="soft-skills">
+    <SoftSkills />
+  </section>
+
+  <section>
+      <HardSkills/>
+  </section>
+
+  <section id="projetos">
+      <ProjectsCarousel />
+  </section>
+
+  <section>
+      <NewProjectsCarousel/>
+  </section>
 </template>
 
 <script>

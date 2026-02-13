@@ -1,15 +1,25 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import About from '../views/About.vue'
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/about', component: About }
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(), // HASH MODE funciona no GitHub Pages
-  routes
+  routes,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+  },
 })
 
 export default router
