@@ -7,6 +7,7 @@
             <li><router-link :to="{ path: '/', hash: '#home'}">Início</router-link></li>
             <li><router-link :to="{ path: '/', hash: '#soft-skills'}">Soft Skills</router-link></li>
             <li><router-link :to="{ path: '/', hash: '#projetos'}">Projetos</router-link></li>
+            <li><router-link :to="{ path: '/', hash: '#formacoes'}"> Formações </router-link></li>
         </ul>
     </nav>
     </header>

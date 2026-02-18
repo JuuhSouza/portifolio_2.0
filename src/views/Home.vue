@@ -22,6 +22,10 @@
   <section>
       <NewProjectsCarousel/>
   </section>
+
+  <section id="formacoes">
+      <Training/>
+  </section>
 </template>
 
 <script>
@@ -31,11 +35,12 @@ import SoftSkills from '../components/SoftSkills.vue';
 import HardSkills from '../components/HardSkills.vue';
 import ProjectsCarousel from '../components/ProjectsCarousel.vue';
 import NewProjectsCarousel from '../components/NewProjectsCarousel.vue';
+import Training from '../components/Training.vue';
 
   export default {
     name: "Home",
     components:{
-      Banner, AboutMe, SoftSkills, HardSkills, ProjectsCarousel, NewProjectsCarousel
+      Banner, AboutMe, SoftSkills, HardSkills, ProjectsCarousel, NewProjectsCarousel, Training
     }
   }
 </script>

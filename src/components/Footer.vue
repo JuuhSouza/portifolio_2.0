@@ -16,6 +16,7 @@
         <li><router-link :to="{ path: '/', hash: '#home'}">Início</router-link></li>
         <li><router-link :to="{ path: '/', hash: '#soft-skills'}">Soft Skills</router-link></li>
         <li><router-link :to="{ path: '/', hash: '#projetos'}">Projetos</router-link></li>
+        <li><router-link :to="{ path: '/', hash: '#formacoes'}">Formações</router-link></li>
     </ul>
 
     <p>Desenvolvido por Júlia Souza | &copy; 2026</p>
@@ -40,7 +41,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 footer .social_icon,

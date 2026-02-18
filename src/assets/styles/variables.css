@@ -25,7 +25,6 @@
 
     /* CARDS - SOFTSKILLS - HARDSKILL*/
     --title-color-card: #aaa9a9;
-    --card-border: #F2CF63;
     --p-color-card: #c0c0c0;
     --box-shadow-card: inset 20px 20px 20px rgba(255, 255, 255, 0.2),
         25px 35px 20px rgba(255, 255, 255, 0.05),
@@ -44,9 +43,14 @@
     --water-btn-hover-background: #011F26;
     --water-btn-hover-color: #9CCED9;
 
+    /* Training */
+    --color-p-training: #aaa9a9;
+    --time-training: #9CCED9;
+    --backgound-color-training: #011f26;
+
     /* FOOTER */
     --color-text: white;
-    --background-color-footer: linear-gradient(0deg, rgba(53, 135, 242, 1) 19%, rgba(1, 31, 38, 1) 96%);
+    --background-color-footer: linear-gradient(0deg, rgba(53, 135, 242, 1) 19%, #011f26 96%);
     --background-color-card-footer: #3587F2;
 
 }
