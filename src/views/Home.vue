@@ -1,52 +1,55 @@
 <template>
-  <section id="home">
-     <Banner/>
-  </section>
+  <div class="crt-container">
+    <Transition name="fade" mode="out-in">
+      <BootScreen 
+        v-if="isBooting" 
+        @complete="isBooting = false" 
+      />
+      
+      <Interface v-else />
+    </Transition>
 
-  <section>
-      <AboutMe/>
-  </section>
-
-  <section id="soft-skills">
-    <SoftSkills />
-  </section>
-
-  <section>
-      <HardSkills/>
-  </section>
-
-  <section id="projetos">
-      <ProjectsCarousel />
-  </section>
-
-  <section>
-      <NewProjectsCarousel/>
-  </section>
-
-  <section id="formacoes">
-      <Training/>
-  </section>
+  </div>
 </template>
 
-<script>
-import AboutMe from '../components/AboutMe.vue';
-import Banner from '../components/Banner.vue';
-import SoftSkills from '../components/SoftSkills.vue';
-import HardSkills from '../components/HardSkills.vue';
-import ProjectsCarousel from '../components/ProjectsCarousel.vue';
-import NewProjectsCarousel from '../components/NewProjectsCarousel.vue';
-import Training from '../components/Training.vue';
+<script setup>
+import { ref } from 'vue'
+import BootScreen from '../components/Initialization/Initialization.vue'
+import Interface from '../components/Pip-boy/Interface.vue'
 
-  export default {
-    name: "Home",
-    components:{
-      Banner, AboutMe, SoftSkills, HardSkills, ProjectsCarousel, NewProjectsCarousel, Training
-    }
-  }
+const isBooting = ref(true)
 </script>
 
 <style scoped>
+.crt-container {
+  background-color: var(--background-color);
+  color: var(--color-pip-boy);
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+  text-shadow: var(--text-shadow);
+}
 
+.crt-container::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
+  background-size: 100% 4px;
+  z-index: 999;
+  pointer-events: none;
+}
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
 
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

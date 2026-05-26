@@ -1,74 +1,11 @@
 <template>
-    <header>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <nav>
-        <img src="../assets/img/brasao.tucano.png" alt="" class="logo">
-        <ul>
-            <li><router-link :to="{ path: '/', hash: '#home'}">Início</router-link></li>
-            <li><router-link :to="{ path: '/', hash: '#soft-skills'}">Soft Skills</router-link></li>
-            <li><router-link :to="{ path: '/', hash: '#projetos'}">Projetos</router-link></li>
-            <li><router-link :to="{ path: '/', hash: '#formacoes'}"> Formações </router-link></li>
-        </ul>
-    </nav>
-    </header>
+  <div class="tab-content">
+    <h2>STATUS DO HABITANTE DA VAULT</h2>
+    <div class="stat-grid">
+      <p><strong>NOME:</strong> Seu Nome Aqui</p>
+      <p><strong>LEVEL:</strong> 25 (Full-Stack Developer)</p>
+      <p><strong>S.P.E.C.I.A.L:</strong> S:6 P:7 E:5 C:8 I:9 A:6 L:7</p>
+    </div>
+  </div>
 </template>
 
-<script>
-    export default {
-        name: "NavBar"
-    }
-</script>
-
-<style scoped>
-::selection{
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.logo{
-    width: 60px;
-    height: 60px;
-    margin-left: 20px;
-}
-
-header{
-    z-index: 9999;
-    padding: 0.9rem 0;
-    top: 0;
-    left: 0;
-    position: absolute;
-    position: fixed;
-    width: 100%;
-    border-bottom: 1px solid var(--nav-color-border);
-}
-
-nav{
-    /* background-color: red; */
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav ul{
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
-nav ul a{
-    text-decoration: none;
-    color: var(--nav-color-a);
-    padding: 0 1.5rem;
-    transform: uppercase;
-    font-weight: 480;
-    font-size: var(--font-size);
-    text-shadow: 1px 1px 2px rgb(27, 27, 27);
-    transition: all .3s ease;
-}
-
-nav ul a:hover{
-    color: var(--nav-color-hover);
-}
-
-</style>
