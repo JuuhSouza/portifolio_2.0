@@ -54,7 +54,6 @@ const mainTabs = [
   { id: 'projetos',   label: 'PROJETOS'   }
 ]
 
-// cada aba principal tem suas próprias sub-abas
 const subTabMap = {
   status:  ['STATUS', 'SOBRE'],
   skills:   ['SOFT SKILLS', 'HARD SKILLS'],
