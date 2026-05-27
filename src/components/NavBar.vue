@@ -100,6 +100,7 @@ watch(() => props.modelValue, (val) => {
   background-color: var(--icon-background-color);
   padding: 6px 6px;
   line-height: 1;
+  margin: 4px;
   color: var(--color-pip-boy);
 }
 
