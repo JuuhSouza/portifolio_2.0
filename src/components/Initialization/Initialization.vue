@@ -15,6 +15,10 @@
       <main class="pipboy-main">
         <Interface/>
       </main>
+
+      <footer>
+        <Footer/>
+      </footer>
     </div>
   </div>
 </template>
@@ -22,6 +26,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import NavBar from '../NavBar.vue'
+import Footer from '../Footer.vue'
 import Interface from '../Pip-boy/Interface.vue'
 
 // Estado para controlar qual tela exibir
@@ -110,8 +115,6 @@ onMounted(() => {
 }
 
 .pipboy-header {
-  border-bottom: 2px solid var(--color-pip-boy);
-  padding-bottom: 15px;
-  margin-bottom: 30px;
+  margin-top: -3rem;
 }
 </style>

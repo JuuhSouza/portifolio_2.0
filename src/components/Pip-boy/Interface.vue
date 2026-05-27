@@ -1,52 +1,19 @@
 <template>
-   <div class="pipboy-content">
-    <header class="pipboy-header">
-      <h1>PIP-BOY 3000 PLUS</h1>
-    </header>
-    
-    <main class="pipboy-main">
+  <div v-if="currentTab" class="pipboy-content">
 
+    <main class="pipboy-main">
+      <component :is="tabComponents[currentTab]" />
     </main>
   </div>
 </template>
 
-<script>
-import NavBar from '../NavBar.vue'
+<script setup>
+import { ref } from 'vue'
+import StatusTab from '../Tabs/StatusTab.vue'
 
-export default {
-  components: {
-    NavBar
-  }
+const currentTab = ref('STATUS')
+
+const tabComponents = {
+  STATUS: StatusTab
 }
-
 </script>
-
-<style scoped>
-.pipboy-header {
-  border-bottom: 2px solid var(--color-pip-boy);
-  padding-bottom: 15px;
-  margin-bottom: 30px;
-}
-.pipboy-header h1 {
-  margin: 0 0 15px 0;
-  font-size: 2rem;
-}
-.pipboy-nav {
-  display: flex;
-  gap: 20px;
-}
-.nav-btn {
-  background: none;
-  border: none;
-  color: var(--color-pip-boy);
-  font-family: inherit;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 5px 10px;
-}
-.nav-btn:hover, .nav-btn.active {
-  background-color: var(--color-pip-boy);
-  color: var(--color-dark-green);
-  font-weight: bold;
-}
-</style>
