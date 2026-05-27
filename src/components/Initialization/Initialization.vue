@@ -9,26 +9,20 @@
 
     <div v-else class="pipboy-content">
       <header class="pipboy-header">
-        <h1>PIP-BOY 3000 PLUS</h1>
-        <nav class="pipboy-nav">
-          <button class="nav-btn active">[ STAT ]</button>
-          <button class="nav-btn">[ INV ]</button>
-          <button class="nav-btn">[ DATA ]</button>
-        </nav>
+        <NavBar/>
       </header>
       
       <main class="pipboy-main">
-        <h2>BEM-VINDO, RECRUTA.</h2>
-        <p>Seu portfólio, projetos e habilidades aparecerão aqui.</p>
-        <p>O deserto é perigoso, leve isto com você!</p>
+        <Interface/>
       </main>
     </div>
-
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import NavBar from '../NavBar.vue'
+import Interface from '../Pip-boy/Interface.vue'
 
 // Estado para controlar qual tela exibir
 const isBooting = ref(true)
@@ -86,7 +80,7 @@ onMounted(() => {
   text-shadow: var(--text-shadow);
 }
 
-.crt-container::before {
+/* .crt-container::before {
   content: " ";
   display: block;
   position: absolute;
@@ -95,7 +89,7 @@ onMounted(() => {
   background-size: 100% 4px;
   z-index: 10;
   pointer-events: none;
-}
+} */
 
 .boot-screen {
   font-size: 1.1rem;
@@ -119,37 +113,5 @@ onMounted(() => {
   border-bottom: 2px solid var(--color-pip-boy);
   padding-bottom: 15px;
   margin-bottom: 30px;
-}
-
-.pipboy-header h1 {
-  margin: 0 0 15px 0;
-  font-size: 2rem;
-}
-
-.pipboy-nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-btn {
-  background: none;
-  border: none;
-  color: var(--color-pip-boy);
-  font-family: inherit;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 5px 10px;
-  text-shadow: inherit;
-}
-
-.nav-btn:hover, .nav-btn.active {
-  background-color: var(--color-pip-boy);
-  color: var(--color-dark-green);
-  font-weight: bold;
-}
-
-.pipboy-main h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
 }
 </style>

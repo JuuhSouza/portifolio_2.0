@@ -2,12 +2,10 @@
    <div class="pipboy-content">
     <header class="pipboy-header">
       <h1>PIP-BOY 3000 PLUS</h1>
-        <NavBar/>
     </header>
     
     <main class="pipboy-main">
-      <h2>BEM-VINDO, RECRUTA.</h2>
-      <p>Este é o seu novo painel Pip-Boy segregado em componentes!</p>
+
     </main>
   </div>
 </template>

@@ -8,4 +8,9 @@
     --color-pip-boy:#00ff66;
     --color-dark-green:#001100;
     --text-shadow: 0 0 4px rgba(0, 255, 102, 0.6) ;
+
+    /* nav bar */
+    --line-color:#00ff66;
+    --icon-color:#00ff66;
+    --icon-background-color:#00ff667e;
 }

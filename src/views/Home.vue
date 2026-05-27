@@ -5,7 +5,6 @@
         v-if="isBooting" 
         @complete="isBooting = false" 
       />
-      
       <Interface v-else />
     </Transition>
 
@@ -32,7 +31,7 @@ const isBooting = ref(true)
   text-shadow: var(--text-shadow);
 }
 
-.crt-container::before {
+/* .crt-container::before {
   content: " ";
   display: block;
   position: fixed;
@@ -41,7 +40,7 @@ const isBooting = ref(true)
   background-size: 100% 4px;
   z-index: 999;
   pointer-events: none;
-}
+} */
 
 .fade-enter-active,
 .fade-leave-active {
