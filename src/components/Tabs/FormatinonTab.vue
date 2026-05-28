@@ -1,19 +1,6 @@
 <template>
   <div class="stat-tab">
-    <div class="sub-tabs">
-      <button
-        v-for="cat in categorias"
-        :key="cat.id"
-        class="sub-tab"
-        :class="{ active: categoriaAtiva === cat.id }"
-        @click="categoriaAtiva = cat.id"
-      >
-        {{ cat.label }}
-      </button>
-    </div>
-
-    <div class="view-mode-line">PROJECTS MODE</div>
-
+    <div class="view-mode-line">FORMAÇÕES</div>
     <div class="stat-body execution-screen">
       <div class="projects-list">
         <div
@@ -27,7 +14,7 @@
         </div>
       </div>
 
-      <div class="project-details">
+      <div class="project-details" v-if="selectedProject">
         <div class="details-wrapper">
           <div class="project-preview-box">
             <img
@@ -37,14 +24,16 @@
             />
             <div class="image-overlay"></div>
           </div>
-
           <div class="project-description">
             <h3 class="project-title">{{ selectedProject.name }}</h3>
             <p class="project-text">{{ selectedProject.description }}</p>
-            <a :href="selectedProject.link" class="link-repo">Ver mais</a>
           </div>
         </div>
       </div>
+
+      <div class="project-details" v-else>
+      </div>
+
     </div>
 
     <div class="quick-items">
@@ -59,18 +48,21 @@
 import { ref, computed, watch } from 'vue'
 
 const props = defineProps({
-  activeSub: { type: String, default: 'FRONT-END' }
+  activeSub: { type: String, default: 'CURSOS' }
 })
 
-// mapeia o texto da sub-aba para o id da categoria
 const categoriaAtiva = computed(() =>
-  props.activeSub === 'BACK-END' ? 'back' : 'front'
+  props.activeSub === 'FACULDADE' ? 'faculdade' : 'cursos'
 )
+
+watch(() => props.activeSub, (val) => {
+  console.log('activeSub recebido:', val)
+}, { immediate: true })
 
 const projects = ref([
   {
     id: 1,
-    categoria: 'front',
+    categoria: 'cursos',
     name: "PROJECT AQUA",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80",
@@ -78,7 +70,7 @@ const projects = ref([
   },
   {
     id: 2,
-    categoria: 'front',
+    categoria: 'cursos',
     name: "G.E.C.K. INIT",
     description: "Kit de Criação do Jardim do Éden.",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=300&q=80",
@@ -86,7 +78,7 @@ const projects = ref([
   },
   {
     id: 3,
-    categoria: 'back',
+    categoria: 'faculdade',
     name: "LIBERTY PRIME",
     description: "Restauração do sistema tático de combate robótico gigante.",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=300&q=80",
@@ -211,22 +203,6 @@ watch(categoriaAtiva, () => {
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
-
-.link-repo{
-  margin: 0.5rem 0 0 40rem;
-  padding: 0.2rem;
-  text-align: center;
-  color: var(--color-link);
-  box-shadow: 0 0 8px var(--color-pip-boy);
-  background-color: var(--backgroud-color-link);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-}
-
-.link-repo:hover{
-  opacity: 0.5;
 }
 
 .project-title {

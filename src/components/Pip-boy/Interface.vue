@@ -11,16 +11,20 @@
 
 <script setup>
 import { ref } from 'vue'
-import StatusTab   from '../Tabs/StatusTab.vue'
+import StatusTab from '../Tabs/StatusTab.vue'
+import SkillsTab from '../Tabs/SkillsTab.vue'
+import FormacaoTab from '../Tabs/FormatinonTab.vue'
 import ProjectsTab from '../Tabs/ProjectsTab.vue'
 
-const currentTab = ref('status')
-const currentSub = ref('STATUS')
+const props = defineProps({
+  currentTab: { type: String, default: 'status' },
+  currentSub: { type: String, default: 'STATUS' },
+})
 
 const tabComponents = {
-  status:   StatusTab,
-  skills:   SkillsTab,
-  formacao: FormacaoTab,
+  status: StatusTab,
+  skills: SkillsTab,
+  formacoes: FormacaoTab,
   projetos: ProjectsTab,
 }
 </script>
@@ -30,6 +34,10 @@ const tabComponents = {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+}
+
+.pipboy-header {
+  margin-bottom: 8px;
 }
 
 .pipboy-main {

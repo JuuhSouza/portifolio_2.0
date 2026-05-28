@@ -32,13 +32,17 @@ import NavBar from '../NavBar.vue'
 import Footer from '../Footer.vue'
 import StatusTab   from '../Tabs/StatusTab.vue'
 import ProjectsTab from '../Tabs/ProjectsTab.vue'
+import FormatinonTab from '../Tabs/FormatinonTab.vue'
+import SkillsTab from '../Tabs/SkillsTab.vue'
 
 const isBooting = ref(true)
 const currentTab = ref('status')
 const currentSub = ref('STATUS')
 
 const tabComponents = {
-  status:   StatusTab,
+  status: StatusTab,
+  skills: SkillsTab,
+  formacoes: FormatinonTab,
   projetos: ProjectsTab,
 }
 
@@ -78,12 +82,11 @@ onMounted(() => {
   background-color: var(--background-color);
   color: var(--color-pip-boy);
   font-family: var(--font);
-  min-height: 100vh;
   padding: 30px 30px 0 30px;
   box-sizing: border-box;
   position: relative;
   text-shadow: var(--text-shadow);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .boot-screen {
@@ -108,6 +111,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 60px);
+  overflow: hidden;
 }
 
 .pipboy-header {
@@ -117,6 +121,6 @@ onMounted(() => {
 .pipboy-main {
   flex: 1;
   padding: 8px 0;
-  padding-bottom: 60px;
+  overflow: hidden;
 }
 </style>

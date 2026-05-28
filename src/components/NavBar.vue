@@ -50,14 +50,14 @@ const activeSub  = ref('STATUS')
 const mainTabs = [
   { id: 'status',  label: 'STATUS'  },
   { id: 'skills',   label: 'SKILLS'   },
-  { id: 'formacao',  label: 'FORMAÇÕES'  },
+  { id: 'formacoes',  label: 'FORMAÇÕES'  },
   { id: 'projetos',   label: 'PROJETOS'   }
 ]
 
 const subTabMap = {
   status:  ['STATUS', 'SOBRE'],
   skills:   ['SOFT SKILLS', 'HARD SKILLS'],
-  formacao:  ['CURSOS', 'FACULDADE'],
+  formacoes:  ['CURSOS', 'FACULDADE'],
   projetos:   ['FRONT-END', 'BACK-END']
 }
 
@@ -84,7 +84,6 @@ watch(() => props.modelValue, (val) => {
 <style scoped>
 .pipboy-nav {
   width: 100%;
-  margin-top: -2rem;
 }
 
 .nav-main {
