@@ -84,6 +84,7 @@ watch(() => props.modelValue, (val) => {
 <style scoped>
 .pipboy-nav {
   width: 100%;
+  margin-top: -2rem;
 }
 
 .nav-main {

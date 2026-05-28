@@ -9,16 +9,19 @@
 
     <div v-else class="pipboy-content">
       <header class="pipboy-header">
-        <NavBar/>
+        <NavBar
+          v-model="currentTab"
+          @update:sub="currentSub = $event"
+        />
       </header>
-      
-      <main class="pipboy-main">
-        <Interface/>
-      </main>
 
-      <footer>
-        <Footer/>
-      </footer>
+      <main class="pipboy-main">
+        <component
+          :is="tabComponents[currentTab]"
+          :activeSub="currentSub"
+        />
+          <Footer/>
+      </main>
     </div>
   </div>
 </template>
@@ -27,12 +30,18 @@
 import { ref, onMounted } from 'vue'
 import NavBar from '../NavBar.vue'
 import Footer from '../Footer.vue'
-import Interface from '../Pip-boy/Interface.vue'
+import StatusTab   from '../Tabs/StatusTab.vue'
+import ProjectsTab from '../Tabs/ProjectsTab.vue'
 
-// Estado para controlar qual tela exibir
 const isBooting = ref(true)
+const currentTab = ref('status')
+const currentSub = ref('STATUS')
 
-// Linhas que vão aparecer no terminal
+const tabComponents = {
+  status:   StatusTab,
+  projetos: ProjectsTab,
+}
+
 const bootLines = [
   "WELCOME TO ROBCO INDUSTRIES (TM) TERMLINK",
   "COPYRIGHT 2075-2077 ROBCO INDUSTRIES",
@@ -47,27 +56,18 @@ const bootLines = [
   "STARTING INTERFACE..."
 ]
 
-// Linhas que já foram processadas e estão visíveis
 const visibleLines = ref([])
 
 const printBootSequence = async () => {
   for (const line of bootLines) {
-    // Adiciona a linha atual ao array visível
     visibleLines.value.push(line)
-    
-    // Simula um delay aleatório entre uma linha e outra (entre 200ms e 600ms)
     const delay = Math.random() * 400 + 200
     await new Promise(resolve => setTimeout(resolve, delay))
   }
-
-  // Pequena pausa dramática de 1 segundo após terminar o texto
   await new Promise(resolve => setTimeout(resolve, 1000))
-  
-  // Desliga a tela de boot e entra no Pip-Boy
   isBooting.value = false
 }
 
-// Dispara a sequência assim que o componente é montado na tela
 onMounted(() => {
   printBootSequence()
 })
@@ -79,22 +79,12 @@ onMounted(() => {
   color: var(--color-pip-boy);
   font-family: var(--font);
   min-height: 100vh;
-  padding: 30px;
+  padding: 30px 30px 0 30px;
   box-sizing: border-box;
   position: relative;
   text-shadow: var(--text-shadow);
+  overflow-x: hidden;
 }
-
-/* .crt-container::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  background: linear-gradient(rgba(26, 19, 19, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
-  background-size: 100% 4px;
-  z-index: 10;
-  pointer-events: none;
-} */
 
 .boot-screen {
   font-size: 1.1rem;
@@ -114,7 +104,19 @@ onMounted(() => {
   50% { opacity: 0; }
 }
 
+.pipboy-content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px);
+}
+
 .pipboy-header {
-  margin-top: -3rem;
+  margin-bottom: 8px;
+}
+
+.pipboy-main {
+  flex: 1;
+  padding: 8px 0;
+  padding-bottom: 60px;
 }
 </style>

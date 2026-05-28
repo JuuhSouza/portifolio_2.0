@@ -13,7 +13,6 @@
       </div>
 
       <div class="status-seg">
-        <!-- <span class="seg-label">XP</span> -->
         <span class="seg-value">{{ xpPercent }}/05/2026</span>
       </div>
     </div>
@@ -33,9 +32,14 @@ const xpPercent = ref(27)
   align-items: center;
   justify-content: space-between;
   border-top: 2px solid var(--color-pip-boy);
-  padding: 8px 12px;
+  padding: 8px 30px;
   gap: 16px;
   background: rgba(0, 255, 0, 0.04);
+  position: fixed;
+  bottom: 0;
+  left: 2rem;
+  right: 2rem;
+  z-index: 100;
 }
 
 .status-seg {
