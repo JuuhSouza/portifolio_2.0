@@ -1,46 +1,56 @@
 <template>
-  <div class="stat-tab">
-    <div class="view-mode-line">FORMAÇÕES</div>
-    <div class="stat-body execution-screen">
-      <div class="projects-list">
+  <div class="formation-tab">
+    <div class="formation-mode-line">FORMAÇÕES</div>
+    <div class="formation-body formation-screen">
+      <div class="formation-list">
         <div
-          v-for="project in projetosFiltrados"
-          :key="project.id"
-          class="project-item"
-          :class="{ 'active-item': selectedProject?.id === project.id }"
-          @click="selectedProject = project"
+          v-for="formation in formationsFiltradas"
+          :key="formation.id"
+          class="formation-item"
+          :class="{ 'active-item': selectedFormation?.id === formation.id }"
+          @click="selectedFormation = formation"
         >
-          {{ project.name }}
+          {{ formation.nomeInstituicao }}
         </div>
       </div>
 
-      <div class="project-details" v-if="selectedProject">
-        <div class="details-wrapper">
-          <div class="project-preview-box">
+      <div class="formation-details" v-if="selectedFormation">
+        <div class="formation-wrapper">
+          <div class="formation-preview-box">
             <img
-              :src="selectedProject.image"
-              :alt="selectedProject.name"
-              class="project-image"
+              :src="selectedFormation.image"
+              :alt="selectedFormation.nomeInstituicao"
+              class="formation-image"
             />
-            <div class="image-overlay"></div>
+            <div class="formation-overlay"></div>
           </div>
-          <div class="project-description">
-            <h3 class="project-title">{{ selectedProject.name }}</h3>
-            <p class="project-text">{{ selectedProject.description }}</p>
+
+          <div class="formation-description">
+            <h3 class="formation-title">{{ selectedFormation.nomeInstituicao }}</h3>
+            <div class="formation-course-list">
+              <span
+                v-for="(curso, index) in selectedFormation.curso"
+                :key="index"
+              ><h3>{{ curso }}</h3>
+              </span>
+            </div>
+            
+            <div class="formation-language-list">
+              <h4>Aprendizados:</h4>
+              <span
+                v-for="(lang, index) in selectedFormation.linguagens"
+                :key="index"
+              >
+                {{ lang }}
+              </span>
+            </div>
+
+            <p class="formation-text">{{ selectedFormation.description }}</p>
+
           </div>
         </div>
       </div>
-
-      <div class="project-details" v-else>
-      </div>
-
     </div>
-
-    <div class="quick-items">
-      <div class="quick-item">STIMPAK (1)</div>
-      <div class="quick-item">RADAWAY (0)</div>
-    </div>
-
   </div>
 </template>
 
@@ -51,71 +61,78 @@ const props = defineProps({
   activeSub: { type: String, default: 'CURSOS' }
 })
 
-const categoriaAtiva = computed(() =>
+const activeCategory = computed(() =>
   props.activeSub === 'FACULDADE' ? 'faculdade' : 'cursos'
 )
 
-watch(() => props.activeSub, (val) => {
-  console.log('activeSub recebido:', val)
-}, { immediate: true })
-
-const projects = ref([
+const formations = ref([
   {
     id: 1,
     categoria: 'cursos',
-    name: "PROJECT AQUA",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80",
-    link: "#"
+    nomeInstituicao: "Cesmar",
+    curso: ["Desenvolvimento Full Stack"],
+    linguagens: ["Java", "PostgreSQL", "HTML", "CSS", "Vue"],
+    description: "Meu primeiro contato com a programação, onde aprendi os fundamentos do desenvolvimento web e criei projetos práticos para consolidar meu aprendizado.",
+    image: new URL('../../assets/img/foto_cesmar.png', import.meta.url).href,
   },
   {
     id: 2,
     categoria: 'cursos',
-    name: "G.E.C.K. INIT",
-    description: "Kit de Criação do Jardim do Éden.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=300&q=80",
-    link: "#"
+    nomeInstituicao: "Instituto da Oportunidade Social",
+    curso: ["Desenvolvimento Web Full Stack"],
+    linguagens: ["HTML", "CSS", "JS", "PHP", "MySQL"],
+    description: "Primeira interação no mundo da programação.",
+    image: new URL('../../assets/img/foto_IOS.jpg', import.meta.url).href,
   },
   {
     id: 3,
+    categoria: 'cursos',
+    nomeInstituicao: "Pão dos Pobres",
+    curso: ["Corte, Costura e modelagem sustentável"],
+    linguagens: ["Costura industrial", "Modelagem", "Sustentabilidade"],
+    description: "Curso de corte e costura, onde aprendi técnicas de modelagem, costura industrial e sustentabilidade, aplicando esses conhecimentos em projetos práticos para desenvolver habilidades na área têxtil.",
+    image: new URL('../../assets/img/foto_pao.png', import.meta.url).href,
+  },
+  {
+    id: 4,
     categoria: 'faculdade',
-    name: "LIBERTY PRIME",
-    description: "Restauração do sistema tático de combate robótico gigante.",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=300&q=80",
-    link: "#"
+    nomeInstituicao: "UNISINOS",
+    curso: ["Tecnólogo em Marketing"],
+    linguagens: ["Composores de Marketing", "Gestão de Marcas", "Pesquisa de Mercado"],
+    description: "Minha primeira formção acadêmica, onde adquiri conhecimentos em marketing digital, estratégias de mercado e análise de dados, complementando minha formação técnica com uma visão mais ampla do mercado e do comportamento do consumidor.",
+    image: new URL('../../assets/img/foto_unisinos.png', import.meta.url).href,
   },
 ])
 
-const projetosFiltrados = computed(() =>
-  projects.value.filter(p => p.categoria === categoriaAtiva.value)
+const formationsFiltradas = computed(() =>
+  formations.value.filter(f => f.categoria === activeCategory.value)
 )
 
-const selectedProject = ref(projetosFiltrados.value[0])
+const selectedFormation = ref(formationsFiltradas.value[0] ?? null)
 
-// seleciona o primeiro projeto
-watch(categoriaAtiva, () => {
-  selectedProject.value = projetosFiltrados.value[0] ?? null
+watch(activeCategory, () => {
+  selectedFormation.value = formationsFiltradas.value[0] ?? null
 })
-
 </script>
 
 <style scoped>
-.stat-tab {
+.formation-tab {
   display: flex;
   flex-direction: column;
   height: 100%;
   gap: 0;
 }
 
-.view-mode-line {
-  text-align: center;
+.formation-mode-line {
+  text-align: start;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
-  opacity: 0.35;
-  padding: 4px 0 8px;
+  opacity: 0.9;
+  padding: 0 18px 0;
+  margin-top: -0.5rem;
 }
 
-.execution-screen {
+.formation-screen {
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -126,7 +143,7 @@ watch(categoriaAtiva, () => {
   gap: 20px;
 }
 
-.projects-list {
+.formation-list {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -134,7 +151,7 @@ watch(categoriaAtiva, () => {
   overflow-y: hidden;
 }
 
-.project-item {
+.formation-item {
   padding: 6px 12px;
   font-size: 0.95rem;
   letter-spacing: 0.05em;
@@ -146,7 +163,7 @@ watch(categoriaAtiva, () => {
   opacity: 0.7;
 }
 
-.project-item.active-item {
+.formation-item.active-item {
   background: var(--color-pip-boy);
   color: #000;
   font-weight: bold;
@@ -154,13 +171,13 @@ watch(categoriaAtiva, () => {
   box-shadow: 0 0 8px var(--color-pip-boy);
 }
 
-.project-item:hover:not(.active-item) {
+.formation-item:hover:not(.active-item) {
   opacity: 1;
   border-left: 3px solid var(--color-pip-boy);
   padding-left: 9px;
 }
 
-.project-details {
+.formation-details {
   flex: 1.2;
   border-left: 1px dashed rgba(0, 255, 0, 0.2);
   padding-left: 20px;
@@ -168,44 +185,43 @@ watch(categoriaAtiva, () => {
   flex-direction: column;
 }
 
-.details-wrapper {
+.formation-wrapper {
   display: flex;
   flex-direction: column;
   gap: 12px;
   height: 100%;
 }
 
-.project-preview-box {
+.formation-preview-box {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 360px;
   border: 1px solid var(--color-pip-boy);
   overflow: hidden;
   box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.3);
 }
 
-.project-image {
+.formation-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%) brightness(0.8) contrast(1.2) sepia(100%) hue-rotate(60deg) saturate(6);
 }
 
-.image-overlay {
+.formation-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   background-size: 100% 4px, 6px 100%;
   pointer-events: none;
 }
 
-.project-description {
+.formation-description {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
-.project-title {
+.formation-title {
   font-size: 1rem;
   margin: 0;
   color: var(--color-pip-boy);
@@ -214,56 +230,38 @@ watch(categoriaAtiva, () => {
   padding-bottom: 5px;
 }
 
-.project-text {
+.formation-text {
   font-size: 0.9rem;
   line-height: 1.3;
-  margin: 4px 0 0 0;
+  margin: 4px 0 1rem 0;
   color: var(--color-pip-boy);
   opacity: 0.85;
 }
 
-.equipment-row {
+.formation-course-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 0;
-  border-top: 1px solid var(--color-pip-boy);
-  border-bottom: 1px solid var(--color-pip-boy);
+  margin: 0 -1rem 0 ;
+  gap: 1rem;
 }
 
-.equip-slot {
+.formation-course-list span {
+  color: var(--color-projects);
+  text-align: center;
+  padding: 0.1rem 1rem;
+  font-size: 1rem;
+}
+
+.formation-language-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.8rem;
-  gap: 2px;
-  border: 1px solid var(--color-pip-boy);
-  padding: 4px 8px;
-  min-width: 36px;
-  color: var(--color-pip-boy);
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.equip-slot.diamond {
-  border-color: transparent;
-}
-
-.equip-icon {
-  font-size: 1.1rem;
-}
-
-.quick-items {
-  display: flex;
-  gap: 4px;
-  padding: 6px 0;
-}
-
-.quick-item {
-  border: 1px solid var(--color-pip-boy);
-  padding: 3px 14px;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  opacity: 0.85;
-  color: var(--color-pip-boy);
+.formation-language-list span {
+  color: var(--color-projects);
+  text-align: center;
+  border: 1px solid var(--border-language);
+  padding: 0.1rem 0.3rem;
+  font-size: 1rem;
 }
 </style>

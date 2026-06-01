@@ -1,19 +1,6 @@
 <template>
   <div class="stat-tab">
-    <div class="sub-tabs">
-      <button
-        v-for="cat in categorias"
-        :key="cat.id"
-        class="sub-tab"
-        :class="{ active: categoriaAtiva === cat.id }"
-        @click="categoriaAtiva = cat.id"
-      >
-        {{ cat.label }}
-      </button>
-    </div>
-
     <div class="view-mode-line">PROJECTS MODE</div>
-
     <div class="stat-body execution-screen">
       <div class="projects-list">
         <div
@@ -40,18 +27,22 @@
 
           <div class="project-description">
             <h3 class="project-title">{{ selectedProject.name }}</h3>
+            <div v-if="selectedProject?.linguagens" class="project-languages-list">
+               <h3>Linguagens utilizadas:</h3>
+              <span 
+                v-for="(lang, index) in selectedProject.linguagens" 
+                :key="index" 
+                class="lang-tag"
+              >
+              {{ lang }}
+              </span>
+            </div>
             <p class="project-text">{{ selectedProject.description }}</p>
             <a :href="selectedProject.link" class="link-repo">Ver mais</a>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="quick-items">
-      <div class="quick-item">STIMPAK (1)</div>
-      <div class="quick-item">RADAWAY (0)</div>
-    </div>
-
   </div>
 </template>
 
@@ -68,30 +59,83 @@ const categoriaAtiva = computed(() =>
 )
 
 const projects = ref([
-  {
+{
     id: 1,
     categoria: 'front',
-    name: "PROJECT AQUA",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80",
-    link: "#"
+    name: "Corte e Costura",
+    linguagens: [
+      "JS", "VUE", "HTML", "CSS"
+    ],
+    description: "Site ainda em desenvolvimento, primeiras aplicações para estudo em vue.",
+    image: new URL('../../assets/img/Projeto_CorteCostura.png', import.meta.url).href,
+    link: "https://github.com/JuuhSouza/Site_Corte_Costura"
   },
-  {
+{
     id: 2,
     categoria: 'front',
-    name: "G.E.C.K. INIT",
-    description: "Kit de Criação do Jardim do Éden.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=300&q=80",
-    link: "#"
+    name: "Imperius store",
+    linguagens: [
+      "JS", "VUE", "HTML", "CSS"
+    ],
+    description: "Site ainda em desenvolvimento, primeiras aplicações para estudo em vue.",
+    image: new URL('../../assets/img/ProdutosImperiusStore.png', import.meta.url).href,
+    link: "https://github.com/JuuhSouza/Imperius-Store"
   },
   {
     id: 3,
-    categoria: 'back',
-    name: "LIBERTY PRIME",
-    description: "Restauração do sistema tático de combate robótico gigante.",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=300&q=80",
-    link: "#"
+    categoria: 'front',
+    name: "Jogo da velha",
+    linguagens: [
+      "JS", "HTML", "CSS"
+    ],
+    description: "Uma das primeiras tentativas de fazer background animado e também fazer algo em JS.",
+    image: new URL('../../assets/img/Projeto_JogoDaVelha.png', import.meta.url).href,
+    link: "https://github.com/JuuhSouza/JogoDaVelha"
   },
+  {
+    id: 4,
+    categoria: 'front',
+    name: "Calculadora",
+    linguagens: [
+      "JS", "HTML", "CSS"
+    ],
+    description: "Primeira aplicação em JS",
+    image: new URL('../../assets/img/Projeto_Calculadora.png', import.meta.url).href,
+    link: "https://github.com/JuuhSouza/calculadora"
+  },
+  {
+    id: 5,
+    categoria: 'front',
+    name: "To do list",
+    linguagens: [
+      "JS", "HTML", "CSS"
+    ],
+    description: "Restauração do sistema tático de combate robótico gigante.",
+    image: new URL('../../assets/img/Projeto_ToDoList.png', import.meta.url).href,
+    link: "https://github.com/JuuhSouza/ListaDeTarefas"
+  },
+  {
+    id: 6,
+    categoria: 'back',
+    name: "Souza Pizzaria",
+    linguagens: [
+      "PHP", "HTML", "CSS"
+    ],
+    description: "Primeiro projeto feito com PHP.",
+    image: new URL('../../assets/img/Projeto_SouzasPizzaria.png', import.meta.url).href,
+    link: "https://github.com/JuuhSouza/SouzaPizzaria"
+  },
+  {
+    id: 7,
+    categoria: 'back',
+    name: "Make your burger",
+    linguagens: [
+      "Vue", "HTML", "CSS", "API própria", "JS"
+    ],
+    description: "Restauração do sistema tático de combate robótico gigante.",
+    image: new URL('../../assets/img/Projeto_MakeYourBurger.png', import.meta.url).href,
+    link: "#"
+  }
 ])
 
 const projetosFiltrados = computed(() =>
@@ -116,11 +160,12 @@ watch(categoriaAtiva, () => {
 }
 
 .view-mode-line {
-  text-align: center;
+  text-align: start;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
-  opacity: 0.35;
-  padding: 4px 0 8px;
+  opacity: 0.9;
+  padding: 0 18px 0;
+  margin-top: -0.5rem;
 }
 
 .execution-screen {
@@ -186,7 +231,7 @@ watch(categoriaAtiva, () => {
 .project-preview-box {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 360px;
   border: 1px solid var(--color-pip-boy);
   overflow: hidden;
   box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.3);
@@ -195,8 +240,6 @@ watch(categoriaAtiva, () => {
 .project-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%) brightness(0.8) contrast(1.2) sepia(100%) hue-rotate(60deg) saturate(6);
 }
 
 .image-overlay {
@@ -207,14 +250,21 @@ watch(categoriaAtiva, () => {
   pointer-events: none;
 }
 
-.project-description {
+.project-languages-list {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  margin: 0.5rem 0 0.5rem;
+  gap: 1rem;
+}
+
+.project-languages-list span{
+  color: var(--color-projects);
+  text-align: center;
+  border: 1px solid var(--border-language);
+  padding: 0.1rem 1rem;
+  font-size: 1rem;
 }
 
 .link-repo{
-  margin: 0.5rem 0 0 40rem;
   padding: 0.2rem;
   text-align: center;
   color: var(--color-link);
@@ -241,53 +291,8 @@ watch(categoriaAtiva, () => {
 .project-text {
   font-size: 0.9rem;
   line-height: 1.3;
-  margin: 4px 0 0 0;
+  margin: 4px 0 1rem 0;
   color: var(--color-pip-boy);
   opacity: 0.85;
-}
-
-.equipment-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 0;
-  border-top: 1px solid var(--color-pip-boy);
-  border-bottom: 1px solid var(--color-pip-boy);
-}
-
-.equip-slot {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.8rem;
-  gap: 2px;
-  border: 1px solid var(--color-pip-boy);
-  padding: 4px 8px;
-  min-width: 36px;
-  color: var(--color-pip-boy);
-}
-
-.equip-slot.diamond {
-  border-color: transparent;
-}
-
-.equip-icon {
-  font-size: 1.1rem;
-}
-
-.quick-items {
-  display: flex;
-  gap: 4px;
-  padding: 6px 0;
-}
-
-.quick-item {
-  border: 1px solid var(--color-pip-boy);
-  padding: 3px 14px;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  opacity: 0.85;
-  color: var(--color-pip-boy);
 }
 </style>

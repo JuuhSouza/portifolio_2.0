@@ -1,6 +1,6 @@
 <template>
   <div class="stat-tab">
-    <div class="view-mode-line">FORMAÇÕES</div>
+    <div class="view-mode-line">STATUS</div>
     <div class="stat-body execution-screen">
       <div class="projects-list">
         <div

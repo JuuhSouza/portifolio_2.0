@@ -17,4 +17,8 @@
     /* links */
     --color-link: #001100;
     --backgroud-color-link: #00ff66;
+    
+    /* PROJETOS */
+    --color-projects:#00ff66;
+    --border-language:#00ff665e;
 }
