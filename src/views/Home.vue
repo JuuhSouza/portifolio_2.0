@@ -36,7 +36,7 @@ const isBooting = ref(true)
   display: block;
   position: fixed;
   top: 0; left: 0; bottom: 0; right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.226) 50%);
   background-size: 100% 4px;
   z-index: 999;
   pointer-events: none;

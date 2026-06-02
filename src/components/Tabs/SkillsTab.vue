@@ -22,10 +22,8 @@
               :alt="selectedProject.name"
               class="project-image"
             />
-            <div class="image-overlay"></div>
           </div>
           <div class="project-description">
-            <h3 class="project-title">{{ selectedProject.name }}</h3>
             <p class="project-text">{{ selectedProject.description }}</p>
           </div>
         </div>
@@ -33,14 +31,7 @@
 
       <div class="project-details" v-else>
       </div>
-
     </div>
-
-    <div class="quick-items">
-      <div class="quick-item">STIMPAK (1)</div>
-      <div class="quick-item">RADAWAY (0)</div>
-    </div>
-
   </div>
 </template>
 
@@ -63,25 +54,65 @@ const projects = ref([
   {
     id: 1,
     categoria: 'soft',
-    name: "PROJECT AQUA",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80",
+    name: "Trabalho em Grupo",
+    description: "Tenho facilidade para trabalhar em equipe, colaborando de forma organizada e respeitosa para alcançar objetivos em comum. Valorizo a troca de conhecimentos, a comunicação clara e a cooperação entre os membros da equipe, contribuindo para um ambiente produtivo e resultados de qualidade.",
+    image: new URL('../../assets/img/softSkill_trabalhoGrupo.png', import.meta.url).href,
     link: "#"
   },
   {
     id: 2,
-    categoria: 'hard',
-    name: "G.E.C.K. INIT",
-    description: "Kit de Criação do Jardim do Éden.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=300&q=80",
+    categoria: 'soft',
+    name: "Proatividade",
+    description: "Tenho iniciativa para identificar oportunidades, resolver problemas e agir de forma antecipada, buscando constantemente melhorias e contribuindo para o alcance dos objetivos.",
+    image: new URL('../../assets/img/softSkill_proatividade.png', import.meta.url).href,
     link: "#"
   },
   {
     id: 3,
+    categoria: 'soft',
+    name: "Criatividade",
+    description: "Tenho capacidade para gerar ideias novas e inovadoras, pensando fora da caixa e explorando diferentes abordagens para resolver problemas e criar soluções criativas.",
+    image: new URL('../../assets/img/softSkill_criatividade.png', import.meta.url).href,
+    link: "#"
+  },
+  {
+    id: 4,
     categoria: 'hard',
-    name: "LIBERTY PRIME",
-    description: "Restauração do sistema tático de combate robótico gigante.",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=300&q=80",
+    name: "GIT e GitHub",
+    description: "Conhecimento em controle de versão para gerenciar alterações no código, criar ramificações (branches), realizar merges e manter o histórico de desenvolvimento de projetos.",
+    image: new URL('../../assets/img/hardSkill_git.png', import.meta.url).href,
+    link: "#"
+  },
+  {
+    id: 5,
+    categoria: 'hard',
+    name: "HTMl e CSS",
+    description: "Conhecimento na estruturação de páginas web utilizando marcação semântica, garantindo organização, acessibilidade e boas práticas de desenvolvimento.",
+    image: new URL('../../assets/img/hardSkill_HTML.png', import.meta.url).href,
+    link: "#"
+  },
+  {
+    id: 6,
+    categoria: 'hard',
+    name: "JavaScript e TypeScript",
+    description: "Conhecimento no desenvolvimento de funcionalidades interativas para aplicações web, utilizando lógica de programação, manipulação do DOM e integração com APIs.",
+    image: new URL('../../assets/img/hardSkill_jsTs.png', import.meta.url).href,
+    link: "#"
+  },
+  {
+    id: 7,
+    categoria: 'hard',
+    name: "VUE e Nuxt",
+    description: "Experiência no desenvolvimento de interfaces modernas e reativas, utilizando componentes reutilizáveis para criar aplicações web dinâmicas e eficientes.",
+    image: new URL('../../assets/img/hardSkill_vue.png', import.meta.url).href,
+    link: "#"
+  },
+  {
+    id: 8,
+    categoria: 'hard',
+    name: "API",
+    description: "Experiência na integração e consumo de APIs REST, realizando requisições, tratamento de dados e comunicação entre aplicações e serviços externos.",
+    image: new URL('../../assets/img/hardSkill_api.png', import.meta.url).href,
     link: "#"
   },
 ])
@@ -108,11 +139,12 @@ watch(categoriaAtiva, () => {
 }
 
 .view-mode-line {
-  text-align: center;
-  font-size: 0.75rem;
+  text-align: start;
+  font-size: 1.1rem;
   letter-spacing: 0.15em;
-  opacity: 0.35;
-  padding: 4px 0 8px;
+  opacity: 0.7;
+  padding: 0 18px 0;
+  margin-top: -0.5rem;
 }
 
 .execution-screen {
@@ -136,7 +168,7 @@ watch(categoriaAtiva, () => {
 
 .project-item {
   padding: 6px 12px;
-  font-size: 0.95rem;
+  font-size: 1.03rem;
   letter-spacing: 0.05em;
   cursor: pointer;
   border: 1px solid transparent;
@@ -172,98 +204,37 @@ watch(categoriaAtiva, () => {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  align-items: center;
+  justify-content: center;
   height: 100%;
 }
 
 .project-preview-box {
   position: relative;
-  width: 100%;
-  height: 380px;
-  border: 1px solid var(--color-pip-boy);
+  width: 400px;
+  height: 340px;
   overflow: hidden;
-  box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.3);
 }
 
 .project-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%) brightness(0.8) contrast(1.2) sepia(100%) hue-rotate(60deg) saturate(6);
-}
-
-.image-overlay {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  background-size: 100% 4px, 6px 100%;
-  pointer-events: none;
+  filter: grayscale(100%) brightness(0.8) contrast(1.2) sepia(100%) hue-rotate(60deg) saturate(3.5);
 }
 
 .project-description {
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
-
-.project-title {
-  font-size: 1rem;
-  margin: 0;
-  color: var(--color-pip-boy);
-  letter-spacing: 0.05em;
-  border-bottom: 1px solid rgba(0, 255, 0, 0.3);
-  padding-bottom: 5px;
+  width: 730px;
+  text-align: start;
 }
 
 .project-text {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.3;
-  margin: 4px 0 0 0;
+  margin: 8px 0 0 0;
   color: var(--color-pip-boy);
   opacity: 0.85;
-}
-
-.equipment-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 0;
-  border-top: 1px solid var(--color-pip-boy);
-  border-bottom: 1px solid var(--color-pip-boy);
-}
-
-.equip-slot {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.8rem;
-  gap: 2px;
-  border: 1px solid var(--color-pip-boy);
-  padding: 4px 8px;
-  min-width: 36px;
-  color: var(--color-pip-boy);
-}
-
-.equip-slot.diamond {
-  border-color: transparent;
-}
-
-.equip-icon {
-  font-size: 1.1rem;
-}
-
-.quick-items {
-  display: flex;
-  gap: 4px;
-  padding: 6px 0;
-}
-
-.quick-item {
-  border: 1px solid var(--color-pip-boy);
-  padding: 3px 14px;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  opacity: 0.85;
-  color: var(--color-pip-boy);
 }
 </style>

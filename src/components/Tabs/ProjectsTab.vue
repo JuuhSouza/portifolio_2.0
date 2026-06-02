@@ -161,9 +161,9 @@ watch(categoriaAtiva, () => {
 
 .view-mode-line {
   text-align: start;
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   letter-spacing: 0.15em;
-  opacity: 0.9;
+  opacity: 0.7;
   padding: 0 18px 0;
   margin-top: -0.5rem;
 }
@@ -189,7 +189,7 @@ watch(categoriaAtiva, () => {
 
 .project-item {
   padding: 6px 12px;
-  font-size: 0.95rem;
+  font-size: 1.03rem;
   letter-spacing: 0.05em;
   cursor: pointer;
   border: 1px solid transparent;
@@ -289,7 +289,7 @@ watch(categoriaAtiva, () => {
 }
 
 .project-text {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.3;
   margin: 4px 0 1rem 0;
   color: var(--color-pip-boy);
