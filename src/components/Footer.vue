@@ -13,7 +13,7 @@
       </div>
 
       <div class="status-seg">
-        <span class="seg-value">{{ xpPercent }}/05/2026</span>
+        <span class="seg-value">{{ xpPercent }}/06/2026</span>
       </div>
     </div>
 </template>
@@ -22,7 +22,7 @@
 import { ref } from 'vue'
 
 const age = ref(21)
-const xpPercent = ref(27)
+const xpPercent = ref(2)
 
 </script>
 

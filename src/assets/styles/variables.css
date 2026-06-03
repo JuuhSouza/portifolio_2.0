@@ -21,4 +21,9 @@
     /* PROJETOS */
     --color-projects:#00ff66;
     --border-language:#00ff665e;
+    
+    /* Status */
+    --color-status:#00ff66;
+    --color-span-status:#7fff00;
+    --border-language:#00ff665e;
 }

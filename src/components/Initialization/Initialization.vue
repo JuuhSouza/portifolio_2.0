@@ -34,6 +34,7 @@ import StatusTab   from '../Tabs/StatusTab.vue'
 import ProjectsTab from '../Tabs/ProjectsTab.vue'
 import FormatinonTab from '../Tabs/FormatinonTab.vue'
 import SkillsTab from '../Tabs/SkillsTab.vue'
+import AboutTab from '../Tabs/AboutTab.vue'
 
 const isBooting = ref(true)
 const currentTab = ref('status')
@@ -41,6 +42,7 @@ const currentSub = ref('STATUS')
 
 const tabComponents = {
   status: StatusTab,
+  sobre: AboutTab,
   skills: SkillsTab,
   formacoes: FormatinonTab,
   projetos: ProjectsTab,
