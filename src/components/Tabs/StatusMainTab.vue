@@ -38,27 +38,51 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const skills = ref([
-  { name: "HTML",  level: 80 },
-  { name: "CSS",   level: 80 },
-  { name: "Vue",   level: 60 },
-  { name: "JS",    level: 50 },
-  { name: "Git",   level: 60 },
-  { name: "Node",  level: 30 },
+  { name: 'HTML', level: 80 },
+  { name: 'CSS', level: 80 },
+  { name: 'Vue', level: 60 },
+  { name: 'JS', level: 50 },
+  { name: 'Git', level: 60 },
+  { name: 'Node', level: 30 },
 ])
+
+const containerSize = ref(600)
+
+const updateContainerSize = () => {
+  if (window.innerWidth <= 480) {
+    containerSize.value = 300
+  } else if (window.innerWidth <= 768) {
+    containerSize.value = 480
+  } else if (window.innerWidth <= 1024) {
+    containerSize.value = 700
+  } else {
+    containerSize.value = 500
+  }
+}
+
+onMounted(() => {
+  updateContainerSize()
+  window.addEventListener('resize', updateContainerSize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateContainerSize)
+})
 
 const getOrbitStyle = (index, total) => {
   const angle = (index / total) * 2 * Math.PI - Math.PI / 2
-  const radius = 240
+
+  const radius = containerSize.value * 0.5
 
   const x = Math.cos(angle) * radius
   const y = Math.sin(angle) * radius
 
   return {
     position: 'absolute',
-    top:  '50%',
+    top: '50%',
     left: '50%',
     transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
   }
@@ -74,7 +98,6 @@ const getOrbitStyle = (index, total) => {
 .info {
   text-align: start;
   padding: 0 18px;
-  margin-top: -0.5rem;
 }
 
 .info h1 {
@@ -99,23 +122,21 @@ const getOrbitStyle = (index, total) => {
   justify-content: center;
   align-items: center;
   flex: 1;
-  margin-top: -7rem;
+  margin-top: -1rem;
 }
 
 .avatar-container {
   position: relative;
-  width: 600px;
-  height: 600px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .avatar {
   width: 300px;
   position: relative;
   z-index: 2;
-  mix-blend-mode: screen; /* remove background */
+  mix-blend-mode: screen;
   filter: hue-rotate(10deg) brightness(1.3);
 }
 
@@ -128,18 +149,16 @@ const getOrbitStyle = (index, total) => {
 }
 
 .skill-label {
-  font-size: 0.75rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
-  opacity: 0.9;
   white-space: nowrap;
   color: var(--color-pip-boy);
 }
 
 .skill-bar-track {
   width: 80px;
-  height: 6px;
+  height: 10px;
   border: 1px solid var(--color-pip-boy);
-  background: transparent;
 }
 
 .skill-bar-fill {
@@ -150,8 +169,72 @@ const getOrbitStyle = (index, total) => {
 }
 
 .skill-value {
-  font-size: 0.7rem;
-  opacity: 0.7;
+  font-size: 0.8rem;
   color: var(--color-pip-boy);
+}
+
+@media (max-width: 1024px) {
+  .info {
+    display: none;
+  }
+
+  .content {
+    margin-top: 8rem;
+  }
+
+  .avatar {
+    width: 400px;
+  }
+
+  .skill-bar-track {
+    width: 100px;
+    height: 12px;
+  }
+
+  .skill-label {
+    font-size: 2rem;
+  }
+
+  .skill-value {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .avatar {
+    width: 280px;
+  }
+
+  .skill-bar-track {
+    width: 90px;
+    height: 10px;
+  }
+
+  .skill-label {
+    font-size: 1.5rem;
+  }
+
+  .skill-value {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar {
+    width: 180px;
+  }
+
+  .skill-bar-track {
+    width: 50px;
+    height: 8px;
+  }
+
+  .skill-label {
+    font-size: 1rem;
+  }
+
+  .skill-value {
+    font-size: 0.8rem;
+  }
 }
 </style>

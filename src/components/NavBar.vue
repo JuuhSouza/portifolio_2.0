@@ -1,9 +1,12 @@
 <template>
   <nav class="pipboy-nav">
     <div class="nav-main">
-      <span class="nav-gear"> <i class="fa-solid fa-gear"></i> </span>
+      <span class="nav-gear"><i class="fa-solid fa-gear"></i></span>
+      <button class="arrow-btn" @click="scrollTabs(-1)">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
 
-      <div class="main-tabs">
+      <div class="main-tabs" ref="tabsRef">
         <button
           v-for="tab in mainTabs"
           :key="tab.id"
@@ -16,6 +19,10 @@
           <span v-if="activeMain === tab.id" class="bracket">¬</span>
         </button>
       </div>
+
+      <button class="arrow-btn" @click="scrollTabs(1)">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
 
       <span class="nav-gear"><i class="fa-solid fa-address-card"></i></span>
     </div>
@@ -39,6 +46,13 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 
+const tabsRef = ref(null)
+
+const scrollTabs = (dir) => {
+  if (tabsRef.value) {
+    tabsRef.value.scrollBy({ left: dir * 120, behavior: 'smooth' })
+  }
+}
 const props = defineProps({
   modelValue: { type: String, default: 'stat' }
 })
@@ -159,13 +173,6 @@ watch(() => props.modelValue, (val) => {
   margin: 0 0 10px 0;
 }
 
-.nav-sub {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  padding: 4px 0 0;
-}
-
 .sub-tab {
   background: none;
   border: none;
@@ -196,5 +203,88 @@ watch(() => props.modelValue, (val) => {
   50%  { opacity: 1;   }
   70%  { opacity: 0.7; }
   100% { opacity: 1;   }
+}
+
+.main-tabs-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.arrow-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-pip-boy);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.arrow-btn:hover { 
+  opacity: 1; 
+}
+
+.nav-sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 0 0;
+}
+
+.sub-tabs-inner {
+  display: flex;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .main-tab {
+    font-size: 1.6rem;
+  }
+
+  .sub-tab {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-tab {
+    font-size: 1.2rem;
+  }
+
+  .nav-gear {
+    font-size: 0.875rem;
+  }
+
+ .nav-main {
+    align-items: center;
+    padding: 4px 8px;
+    justify-content: space-between; 
+  }
+}
+
+@media (max-width: 480px) {
+  .main-tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .main-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .arrow-btn {
+    display: flex; 
+    align-items: center;
+  }
+
+  .sub-tab {
+    font-size: 0.9rem;
+  }
 }
 </style>

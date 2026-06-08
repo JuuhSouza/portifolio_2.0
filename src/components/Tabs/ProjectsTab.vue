@@ -295,4 +295,15 @@ watch(categoriaAtiva, () => {
   color: var(--color-pip-boy);
   opacity: 0.85;
 }
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) {
+
+}
 </style>

@@ -125,4 +125,48 @@ onMounted(() => {
   padding: 8px 0;
   overflow: hidden;
 }
+
+@media (max-width: 1024px) {
+  .crt-container {
+    padding: 20px;
+  }
+
+  .boot-screen {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .crt-container {
+    padding: 16px;
+  }
+
+  .boot-screen {
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+
+  .boot-line {
+    margin-bottom: 3px;
+  }
+
+    .pipboy-header {
+    margin-bottom: 4px;
+  }
+
+  .pipboy-main {
+    padding: 4px 0 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .crt-container {
+    padding: 12px;
+  }
+
+  .boot-screen {
+    font-size: 0.75rem;
+    margin-left: 1rem;
+  }
+}
 </style>

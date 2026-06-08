@@ -33,9 +33,10 @@ const xpPercent = ref(2)
   justify-content: space-between;
   border-top: 2px solid var(--color-pip-boy);
   padding: 8px 30px;
+  margin-bottom: 1rem;
   gap: 16px;
   background: rgba(0, 255, 0, 0.04);
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 2rem;
   right: 2rem;
@@ -74,5 +75,34 @@ const xpPercent = ref(2)
   background: var(--color-pip-boy);
   box-shadow: 0 0 6px var(--color-pip-boy);
   transition: width 0.5s ease;
+}
+
+@media (max-width: 1024px) {
+  .status-bar {
+  padding: 9px 22px;
+  margin-bottom: 7rem;
+  gap: 6px;
+  left: 0;
+  right: 0;
+}
+
+.status-seg {
+  gap: 8px;
+  font-size: 1.2rem;
+}
+}
+
+@media (max-width: 768px) {
+ .status-bar {
+    margin-bottom: 4rem;
+    position: absolute;
+}
+}
+
+@media (max-width: 480px) {
+  .status-bar {
+    margin-bottom: 2.5rem;
+    flex-direction: column;
+}
 }
 </style>

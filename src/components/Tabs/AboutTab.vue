@@ -1,6 +1,5 @@
 <template>
   <div class="about-tab">
-    <div class="about-mode-line">SOBRE</div>
     <div class="about-body">
       <div class="about-photo-box">
         <img
@@ -68,15 +67,6 @@
   flex-direction: column;
   height: 100%;
   justify-content: center;
-}
-
-.about-mode-line {
-  text-align: center;
-  font-size: 1.1rem;
-  letter-spacing: 0.15em;
-  opacity: 0.7;
-  padding: 0 18px;
-  margin-top: -0.5rem;
 }
 
 .about-body {
@@ -204,5 +194,87 @@
 
 .about-link:hover {
   opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 16px 0px;
+}
+
+.about-stat-row {
+  font-size: 1.2rem;
+}
+
+.about-role {
+  font-size: 1.5rem;
+}
+
+.about-bio {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+}
+
+
+@media (max-width: 768px) {
+  .about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 1px 100px;
+}
+
+.about-stat-row {
+  font-size: 1.2rem;
+}
+
+.about-role {
+  font-size: 1.5rem;
+}
+
+.about-bio {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.about-link {
+  font-size: 1.3rem;
+}
+}
+
+@media (max-width: 480px) {
+  .about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 16px 100px;
+}
+
+.about-stat-row {
+  font-size: 0.8rem;
+}
+
+.about-role {
+  font-size: 1rem;
+}
+
+.about-bio {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.about-link {
+  color: var(--color-link);
+  background-color: var(--backgroud-color-link);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  padding: 4px 16px;
+  box-shadow: 0 0 8px var(--color-pip-boy);
+  transition: opacity 0.2s;
+}
 }
 </style>

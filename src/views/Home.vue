@@ -8,6 +8,8 @@
       <Interface v-else />
     </Transition>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   </div>
 </template>
 
@@ -25,7 +27,7 @@ const isBooting = ref(true)
   color: var(--color-pip-boy);
   font-family: 'Courier New', Courier, monospace;
   min-height: 100vh;
-  padding: 30px;
+  padding: 10px;
   box-sizing: border-box;
   position: relative;
   text-shadow: var(--text-shadow);
@@ -50,5 +52,12 @@ const isBooting = ref(true)
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .crt-container {
+  min-height: 98vh;
+  padding: 6px;
+}
 }
 </style>
