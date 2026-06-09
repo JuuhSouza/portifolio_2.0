@@ -57,7 +57,7 @@ const updateContainerSize = () => {
   } else if (window.innerWidth <= 768) {
     containerSize.value = 480
   } else if (window.innerWidth <= 1024) {
-    containerSize.value = 700
+    containerSize.value = 500
   } else {
     containerSize.value = 500
   }
@@ -183,7 +183,7 @@ const getOrbitStyle = (index, total) => {
   }
 
   .avatar {
-    width: 400px;
+    width: 300px;
   }
 
   .skill-bar-track {
@@ -192,11 +192,11 @@ const getOrbitStyle = (index, total) => {
   }
 
   .skill-label {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   .skill-value {
-    font-size: 1.7rem;
+    font-size: 1rem;
   }
 }
 

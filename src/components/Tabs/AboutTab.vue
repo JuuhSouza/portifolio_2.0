@@ -197,84 +197,51 @@
 }
 
 @media (max-width: 1024px) {
-.about-body {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 20px 16px 0px;
-}
-
 .about-stat-row {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .about-role {
-  font-size: 1.5rem;
+  font-size: 1rem;
+}
+
+.about-bio {
+  font-size: 1rem;
+}
+
+.about-link {
+  margin: 0 0 3rem;
+}
+}
+
+@media (max-width: 768px) {
+  .about-body {
+  flex-direction: column;
+}
+
+.about-stat-row {
+  font-size: 1rem;
+}
+
+.about-role {
+  font-size: 1rem;
 }
 
 .about-bio {
   font-size: 1rem;
   line-height: 1.2;
 }
-}
-
-
-@media (max-width: 768px) {
-  .about-body {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 20px 1px 100px;
-}
-
-.about-stat-row {
-  font-size: 1.2rem;
-}
-
-.about-role {
-  font-size: 1.5rem;
-}
-
-.about-bio {
-  font-size: 1.5rem;
-  line-height: 1.2;
-}
 
 .about-link {
-  font-size: 1.3rem;
+  font-size: 1rem;
+  margin: 0;
 }
 }
 
 @media (max-width: 480px) {
-  .about-body {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 20px 16px 100px;
-}
-
-.about-stat-row {
-  font-size: 0.8rem;
-}
-
-.about-role {
-  font-size: 1rem;
-}
-
-.about-bio {
-  font-size: 1.2rem;
-  line-height: 1.2;
-}
-
 .about-link {
-  color: var(--color-link);
-  background-color: var(--backgroud-color-link);
-  text-decoration: none;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  padding: 4px 16px;
-  box-shadow: 0 0 8px var(--color-pip-boy);
-  transition: opacity 0.2s;
+  font-size: 0.8rem;
+  margin: 0 0 1rem;
 }
 }
 </style>

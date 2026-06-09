@@ -240,7 +240,7 @@ watch(categoriaAtiva, () => {
 
 @media (max-width: 1024px) {
  .project-item {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
   .view-mode-line {
@@ -253,8 +253,8 @@ watch(categoriaAtiva, () => {
 }
 
 .project-preview-box {
-  width: 700px;
-  height: 490px;
+  width: 500px;
+  height: 400px;
 }
 
 .project-description {
@@ -262,7 +262,7 @@ watch(categoriaAtiva, () => {
 }
 
 .project-text {
-  font-size: 1.7rem;
+  font-size: 1rem;
 }
 
 .project-details {
@@ -272,7 +272,7 @@ watch(categoriaAtiva, () => {
 
 @media (max-width: 768px) {
   .project-item {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
   .view-mode-line {
@@ -281,12 +281,11 @@ watch(categoriaAtiva, () => {
 
   .execution-screen {
     flex-direction: column;
-    padding: 20px 16px 100px;
 }
 
 .project-preview-box {
-  width: 600px;
-  height: 440px;
+  width: 400px;
+  height: 350px;
 }
 
 .project-description {
@@ -294,7 +293,8 @@ watch(categoriaAtiva, () => {
 }
 
 .project-text {
-  font-size: 1.5rem;
+  font-size: 1rem;
+    margin: 0 0 -10rem 0;
 }
 
 .project-details {
@@ -306,13 +306,13 @@ watch(categoriaAtiva, () => {
   .project-item {
   font-size: 0.9rem;
 }
+
   .view-mode-line {
     display: none;
 }
 
   .execution-screen {
     flex-direction: column;
-    padding: 20px 16px 100px;
 }
 
 .project-preview-box {
@@ -321,7 +321,7 @@ watch(categoriaAtiva, () => {
 }
 
 .project-description {
-  width: 290px;
+  width: 370px;
 }
 
 .project-text {

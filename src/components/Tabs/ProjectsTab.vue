@@ -28,17 +28,19 @@
           <div class="project-description">
             <h3 class="project-title">{{ selectedProject.name }}</h3>
             <div v-if="selectedProject?.linguagens" class="project-languages-list">
-               <h3>Linguagens utilizadas:</h3>
-              <span 
-                v-for="(lang, index) in selectedProject.linguagens" 
-                :key="index" 
-                class="lang-tag"
-              >
-              {{ lang }}
-              </span>
-            </div>
+    <h3>Linguagens utilizadas:</h3>
+    <span 
+      v-for="(lang, index) in selectedProject.linguagens" 
+      :key="index" 
+      class="lang-tag"
+    >
+    {{ lang }}
+    </span>
+</div>
             <p class="project-text">{{ selectedProject.description }}</p>
-            <a :href="selectedProject.link" class="link-repo">Ver mais</a>
+            <div class="link-more">
+            <a :href="selectedProject.link" class="link-repo">Repositório</a>
+            </div>
           </div>
         </div>
       </div>
@@ -260,7 +262,7 @@ watch(categoriaAtiva, () => {
   color: var(--color-projects);
   text-align: center;
   border: 1px solid var(--border-language);
-  padding: 0.1rem 1rem;
+  padding: 0.1rem 0.3rem;
   font-size: 1rem;
 }
 
@@ -297,13 +299,83 @@ watch(categoriaAtiva, () => {
 }
 
 @media (max-width: 1024px) {
+.stat-tab {
+  height: 100%;
+  gap: 0;
+}
+
+.view-mode-line {
+  display: none;
+}
+
+.execution-screen {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-item {
+  font-size: 1rem;
+}
+
+.project-details {
+  border-left:none;
+}
+
+.link-repo{
+  padding: 0.2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.link-more{
+  margin: 0 0 2rem;
+}
+
+.project-title {
+  font-size: 1rem;
+  padding-bottom: 5px;
+}
+
+.project-text {
+  font-size: 1rem;
+  margin: 0  0 1rem 0;
+}
 }
 
 @media (max-width: 768px) {
-
+.link-more{
+  margin: 0 0 -1rem 0;
+}
 }
 
 @media (max-width: 480px) {
+.project-item {
+  font-size: 0.9rem;
+}
+
+.link-more{
+  margin: 0 0 -1rem;
+}
+
+.project-title {
+  font-size: 1rem;
+  padding-bottom: 5px;
+}
+
+.project-text {
+  font-size: 1rem;
+}
+
+.project-languages-list span{
+  font-size: 0.9rem;
+  border: 1px solid red;
+  padding: 0.8rem 0.8rem 0rem 0.7rem;
+}
+
+.project-preview-box {
+  height: 200px;
+  margin-left: -0.5rem;
+}
 
 }
 </style>

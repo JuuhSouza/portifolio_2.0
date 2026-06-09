@@ -22,7 +22,7 @@
 import { ref } from 'vue'
 
 const age = ref(21)
-const xpPercent = ref(2)
+const xpPercent = ref(15)
 
 </script>
 
@@ -80,7 +80,7 @@ const xpPercent = ref(2)
 @media (max-width: 1024px) {
   .status-bar {
   padding: 9px 22px;
-  margin-bottom: 7rem;
+  margin-bottom: 0rem;
   gap: 6px;
   left: 0;
   right: 0;
@@ -94,15 +94,19 @@ const xpPercent = ref(2)
 
 @media (max-width: 768px) {
  .status-bar {
-    margin-bottom: 4rem;
+    margin-bottom: 0;
     position: absolute;
+}
+
+.status-seg {
+  gap: 8px;
+  font-size: 1rem;
 }
 }
 
 @media (max-width: 480px) {
-  .status-bar {
-    margin-bottom: 2.5rem;
-    flex-direction: column;
+.status-seg {
+  font-size: 0.8rem;
 }
 }
 </style>

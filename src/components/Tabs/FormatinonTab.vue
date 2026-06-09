@@ -271,10 +271,10 @@ watch(activeCategory, () => {
 
 .formation-screen {
   flex-direction: column;
-  padding: 20px 16px 100px;
 }
+
 .formation-item {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .formation-details {
@@ -283,27 +283,27 @@ watch(activeCategory, () => {
 }
 
 .formation-title {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .formation-preview-box {
-  height: 480px;
+  height: 450px;
 }
 
 .formation-text {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .formation-course-list span {
   text-align: start;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .formation-language-list span {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 .formation-language-list h4 {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 }
 
@@ -314,19 +314,17 @@ watch(activeCategory, () => {
 
 .formation-screen {
   flex-direction: column;
-  padding: 20px 16px 100px;
 }
 .formation-item {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .formation-details {
   border-left: none;
-  padding-left: 0;
 }
 
 .formation-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .formation-preview-box {
@@ -334,7 +332,8 @@ watch(activeCategory, () => {
 }
 
 .formation-text {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  margin: 0 0 -6rem 0;
 }
 
 .formation-course-list span {
@@ -342,10 +341,10 @@ watch(activeCategory, () => {
 }
 
 .formation-language-list span {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 .formation-language-list h4 {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 }
 
@@ -356,7 +355,6 @@ watch(activeCategory, () => {
 
 .formation-screen {
   flex-direction: column;
-  padding: 20px 16px 100px;
 }
 .formation-item {
   font-size: 0.9rem;
@@ -368,23 +366,23 @@ watch(activeCategory, () => {
 }
 
 .formation-preview-box {
-  height: 160px;
+  height: 200px;
 }
 
 .formation-text {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .formation-course-list span {
   text-align: start;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .formation-language-list span {
   font-size: 1rem;
 }
 .formation-language-list h4 {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 }
 </style>
