@@ -50,6 +50,13 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
+const modules = [Navigation, Pagination, Autoplay]
 
 const props = defineProps({
   activeSub: { type: String, default: 'FRONT-END' }
@@ -134,7 +141,7 @@ const projects = ref([
     linguagens: [
       "Vue", "HTML", "CSS", "API própria", "JS"
     ],
-    description: "Restauração do sistema tático de combate robótico gigante.",
+    description: "Primeira aplicação de backend e vue, simulando um banco de dados com uma api própria que registra o pedido do cliente.",
     image: new URL('../../assets/img/Projeto_MakeYourBurger.png', import.meta.url).href,
     link: "#"
   }
@@ -253,17 +260,19 @@ watch(categoriaAtiva, () => {
 }
 
 .project-languages-list {
-  display: flex;
-  margin: 0.5rem 0 0.5rem;
-  gap: 1rem;
+   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0.5rem 0;
 }
 
 .project-languages-list span{
-  color: var(--color-projects);
-  text-align: center;
+color: var(--color-projects);
   border: 1px solid var(--border-language);
-  padding: 0.1rem 0.3rem;
-  font-size: 1rem;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.85rem;
+  white-space: nowrap; /* ← tags não quebram */
 }
 
 .link-repo{
@@ -350,11 +359,11 @@ watch(categoriaAtiva, () => {
 
 @media (max-width: 480px) {
 .project-item {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .link-more{
-  margin: 0 0 -1rem;
+  margin: 0 0 2rem;
 }
 
 .project-title {
@@ -366,16 +375,18 @@ watch(categoriaAtiva, () => {
   font-size: 1rem;
 }
 
-.project-languages-list span{
-  font-size: 0.9rem;
-  border: 1px solid red;
-  padding: 0.8rem 0.8rem 0rem 0.7rem;
+ .project-languages-list {
+    gap: 4px;
 }
+
+  .project-languages-list span {
+    font-size: 1rem;
+    padding: 0.1rem 0.4rem;
+  }
 
 .project-preview-box {
   height: 200px;
   margin-left: -0.5rem;
 }
-
 }
 </style>

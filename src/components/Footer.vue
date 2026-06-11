@@ -105,8 +105,8 @@ const xpPercent = ref(15)
 }
 
 @media (max-width: 480px) {
-.status-seg {
-  font-size: 0.8rem;
+  .status-bar {
+    flex-direction: column;
 }
 }
 </style>
